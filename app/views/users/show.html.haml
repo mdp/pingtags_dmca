@@ -1,0 +1,10 @@
+%p
+  %b
+    Email:
+  = h @user.email
+
+= link_to 'Edit', edit_account_path
+|
+= link_to "Logout", user_session_path, :method => :delete
+|
+= link_to 'Back', profiles_path
