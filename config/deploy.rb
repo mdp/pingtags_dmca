@@ -23,7 +23,7 @@ namespace :bundler do
     release_gems = "#{release_path}/vendor/gems/"
     %w(cache gems specifications).each do |sub_dir|
       shared_sub_dir = File.join(shared_gems, sub_dir)
-      run("mkdir -p #{shared_sub_dir} && mkdir -p #{release_gems} && ln -s #{shared_sub_dir} #{release_gems}/#{sub_dir}")
+      run("mkdir -p #{shared_sub_dir} && mkdir -p #{release_gems} && ln -s #{shared_sub_dir} #{release_gems}#{sub_dir}")
     end
   end
  
