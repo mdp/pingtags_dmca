@@ -1,0 +1,16 @@
+!!!
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html;charset=UTF-8", "http-equiv" => "content-type" }
+    %title
+      Pingtags :
+      = controller.controller_name
+    = stylesheet_link_tag 'master'
+
+
+  %body
+    %p{ :style => "color: green" }
+    #flash.container_16
+      = flash[:notice]
+
+    = yield

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<person>
+  <id>gNma67_AdI</id>
+  <first-name>Mark</first-name>
+  <last-name>Percival</last-name>
+  <headline>Chief bottle washer and cook</headline>
+  <location>
+    <name>Atlanta Area</name>
+    <country>
+      <code>us</code>
+    </country>
+  </location>
+  <industry>Information Technology and Services</industry>
+
+  <picture-url>http://media.linkedin.com/mpr/mpr/shrink_80_80/p/2/000/01c/359/041bc1b.jpg</picture-url>
+</person>

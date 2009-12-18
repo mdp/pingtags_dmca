@@ -11,49 +11,41 @@
 
 ActiveRecord::Schema.define(:version => 20090610021930) do
 
-  create_table "links", :force => true do |t|
-    t.string   "destination"
-    t.string   "type"
-    t.integer  "contact_id"
+  create_table "scans", :force => true do |t|
+    t.string   "tracking_cookie"
+    t.integer  "user_id"
+    t.string   "user_agent"
+    t.integer  "ip_address"
+    t.decimal  "lat"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+  
+  create_table "clicks", :force => true do |t|
+    t.integer  "scan_id"
+    t.string   "link_href"
+    t.string   "link"
+    t.datetime "created_at"
+  end
 
   create_table "users", :force => true do |t|
-    t.string "email"
-    t.string "crypted_password"
-    t.string "password_salt"
-    t.string "persistence_token"
-    t.string "single_access_token"
-    t.string "perishable_token"
-  end
-  
-  create_table "contact", :force => true do |t|
-    t.string  "phone_office"
-    t.string  "phone_mobile"
-    t.string  "phone_fax"
-    t.string  "address1"
-    t.string  "address2"
-    t.string  "city"
-    t.string  "state"
-    t.string  "country"
-    t.string  "postal_code"
-    t.string  "company"
-    t.string  "url"
-    t.integer "user_id"
-  end
-
-  create_table "mobile_sessions" do |t|
-    t.string  "cookie"
-    t.string  "user_agent"
-    t.integer "contact_id"
-    t.timestamps
-  end
-  
-  create_table 'actions' do |t|
-    t.integer "mobile_session_id"
-    t.string "description"
-    t.timestamps
+    t.string   "email"
+    t.string   "linked_in_id",                      :null => false
+    t.string   "access_token"
+    t.string   "secret_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "authorized_at"
+    t.text     "profile_xml"
+    t.boolean  "admin"
+    t.string   "persistence_token",                 :null => false
+    t.integer  "login_count",        :default => 0, :null => false
+    t.integer  "failed_login_count", :default => 0, :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
   end
 
 end

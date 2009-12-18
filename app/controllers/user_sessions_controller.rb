@@ -1,19 +1,28 @@
 class UserSessionsController < ApplicationController
-  before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => :destroy
   layout 'simple'
   
   def new
-    @user_session = UserSession.new
+  end
+  
+  def linkedin
+    client = LinkedIn.client
+    request_token = client.get_request_token(:oauth_callback => "http://localhost:3000/oauth_verify")
+    session[:request_token]  = request_token.token
+    session[:request_token_secret]  = request_token.secret
+    redirect_to request_token.authorize_url
   end
   
   def create
-    @user_session = UserSession.new(params[:user_session])
-    if @user_session.save
-      flash[:notice] = "Login successful!"
-      redirect_back_or_default account_url
+    request_token = OAuth::RequestToken.new(LinkedIn.client, session[:request_token], session[:request_token_secret])
+    access_token = request_token.get_access_token(:oauth_verifier => params["oauth_verifier"])
+    user = User.initialize_with_access_token(access_token)
+    if user
+      UserSession.create(user, true)
+      flash[:message] = "Logged in as #{current_user.first_name} #{current_user.last_name}"
+      render
     else
-      render :action => :new
+      flash[:message] = 'You must authorize PingTags to use your LinkedIn account'
+      render :new
     end
   end
   

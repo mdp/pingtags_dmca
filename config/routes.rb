@@ -1,7 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :contacts
-
+  map.resource :account, :controller => "users"  
+  map.connect 'register', :controller => 'users', :action => 'new'
+  map.connect 'login', :controller => 'user_sessions', :action => 'new'
   map.resources :users
+  map.resource :user_session, :collection => {:linkedin => :get}
+
+  map.oauth_callback 'oauth_verify', :controller => 'user_sessions', :action => 'create'
+  
+  map.tag '/:crypt_id', :controller => 'users', :action => 'show'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -42,6 +48,6 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  map.profile '/:crypt_id', :controller => 'users', :action => 'show'
+
 end

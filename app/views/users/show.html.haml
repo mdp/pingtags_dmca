@@ -1,10 +1,59 @@
-%p
-  %b
-    Email:
-  = h @user.email
+#home.current
+  .toolbar
+    %h1 PingTags
+    %a{ :href => '#about', :class=>"button slideup", :id=>"infoButton" }
+      About
+  %div{:style => 'text-align:center'}
+    %h1= @user.name
+    %p.headline= @user.headline
+    #avatar
+      %img{:src=> @user.picture_url }
+    %p.summary= @user.summary
+  %ul.rounded 
+    %li.centered
+      %a{:href => "#ping"}
+        Ping Me
+  %h4 Contact Info
+  %ul.rounded
+    -if @user.email
+      %li.arrow
+        %a{:href => "mailto:#{@user.email}", :rel => "external"}
+          = @user.email
+    %li.arrow
+      %a{:href => 'tel:4049660171', :rel => 'external'}
+        +1-404-966-0171
+  %h4 Links
+  %ul.rounded
+    - @user.links.each do |link|
+      %li.forward
+        %a{:href => link[:url], :target => '_blank'}
+          =link[:name]
 
-= link_to 'Edit', edit_account_path
-|
-= link_to "Logout", user_session_path, :method => :delete
-|
-= link_to 'Back', profiles_path
+#about
+  .centered
+    %p
+      %strong
+        PingTags
+      %br
+      Beta
+      %br
+      %a{ :href => "http://squarepush.com" }
+        Created by SquarePush
+    %p
+      %em
+        Create your own pingtag at
+        %br
+        %a{ :href => "http://pingtags.com" }
+          pingtags.com
+    %p
+      %br
+      %br
+      %a.grayButton.goback{ :href => "#" }
+        Close
+      
+#ping
+  %p
+    %br
+    %br
+    %a.grayButton.goback{ :href => "#" }
+      Cancel

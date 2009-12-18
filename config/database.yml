@@ -1,12 +1,18 @@
 development: &defaults
-  :adapter: mysql
-  :host: localhost
-  :user: root
-  :database: pingtag
+  adapter: mysql
+  host: localhost
+  user: root
+  database: pingtag
 
 test:
   <<: *defaults
+  database: pingtag_test
 
 production:
   <<: *defaults
 
+
+cucumber:
+  <<: *defaults
+  database: pingtag_test
+  
