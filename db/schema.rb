@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20090610021930) do
     t.string   "tracking_cookie"
     t.integer  "user_id"
     t.string   "user_agent"
-    t.integer  "ip_address"
+    t.column   "ip_address", 'integer unsigned'
     t.decimal  "lat"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -5,6 +5,7 @@ disable_system_gems
 
 bundle_path 'vendor/gems'
 
+gem "rails", "2.3.5"
 gem "haml"
 gem "oauth"
 gem "oauth"

@@ -7097,3 +7097,14 @@ Processing UsersController#show (for 127.0.0.1 at 2009-12-15 11:31:28) [GET]
 Rendering template within layouts/iphone
 Rendering users/show
 Completed in 204ms (View: 61, DB: 29) | 200 OK [http://localhost/1ADAO5D]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (48.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (102.7ms)[0m   [0;1mDROP TABLE `scans`[0m
+  [4;35;1mSQL (236.5ms)[0m   [0mCREATE TABLE `scans` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tracking_cookie` varchar(255), `user_id` int(11), `user_agent` varchar(255), `ip_address` integer unsigned, `lat` decimal, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (98.0ms)[0m   [0mCREATE TABLE `clicks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `scan_id` int(11), `link_href` varchar(255), `link` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (60.2ms)[0m   [0mDROP TABLE `users`[0m
+  [4;36;1mSQL (90.3ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `linked_in_id` varchar(255) NOT NULL, `access_token` varchar(255), `secret_token` varchar(255), `created_at` datetime, `updated_at` datetime, `authorized_at` datetime, `profile_xml` text, `admin` tinyint(1), `persistence_token` varchar(255) NOT NULL, `login_count` int(11) DEFAULT 0 NOT NULL, `failed_login_count` int(11) DEFAULT 0 NOT NULL, `last_request_at` datetime, `current_login_at` datetime, `last_login_at` datetime, `current_login_ip` varchar(255), `last_login_ip` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
