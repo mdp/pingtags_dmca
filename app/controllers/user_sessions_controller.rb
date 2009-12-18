@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
   
   def linkedin
     client = LinkedIn.client
-    request_token = client.get_request_token(:oauth_callback => "http://localhost:3000/oauth_verify")
+    request_token = client.get_request_token(:oauth_callback => oauth_callback_url)
     session[:request_token]  = request_token.token
     session[:request_token_secret]  = request_token.secret
     redirect_to request_token.authorize_url
