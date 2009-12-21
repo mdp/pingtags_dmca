@@ -9,8 +9,7 @@
     = stylesheet_link_tag '/jqtouch/jqtouch.min.css'
     = stylesheet_link_tag '/jqtouch/theme.min.css'
     = stylesheet_link_tag '/jqtouch/app.css'
-    = javascript_include_tag 'jquery', :cache => true
-    = javascript_include_tag '/jqtouch/jqtouch.min.js', :cache => true
+    = javascript_include_tag 'jquery', '/jqtouch/jqtouch.min.js', :cache => true
   :javascript
 
     $.jQTouch({
