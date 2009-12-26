@@ -12,13 +12,27 @@
 ActiveRecord::Schema.define(:version => 20090610021930) do
 
   create_table "scans", :force => true do |t|
-    t.string   "tracking_cookie"
     t.integer  "user_id"
-    t.string   "user_agent"
+    t.integer  "device_id"
     t.column   "ip_address", 'integer unsigned'
-    t.decimal  "lat"
+    t.decimal  "lat", :precision => 9, :scale => 6
+    t.decimal  "long", :precision => 9, :scale => 6
+    t.decimal  "accuracy", :precision => 9, :scale => 6
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+  
+  create_table "devices", :force => true do |t|
+    t.string   "user_agent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+  
+  create_table "pings", :force => true do |t|
+    t.string "email"
+    t.text   "comment"
+    t.integer "user_id"
+    t.datetime "created_at"
   end
   
   create_table "clicks", :force => true do |t|
@@ -30,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20090610021930) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
+    t.string   "phone_number"
     t.string   "linked_in_id",                      :null => false
     t.string   "access_token"
     t.string   "secret_token"

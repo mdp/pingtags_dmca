@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
     c.validate_email_field = false
   end
   
+  # We create accounts before email sometimes, so allow nil until it's set
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :allow_nil => true
+  
   def self.initialize_with_access_token(access_token)
     path = "/v1/people/~:(id,first-name,last-name,industry,headline,summary,picture-url,location,member-url-resources)"
     profile = Nokogiri::XML.parse(access_token.get(path).body)
@@ -30,8 +33,8 @@ class User < ActiveRecord::Base
     "HTTP://#{SHORT_DOMAIN}/#{crypted_id}"
   end
   
-  def barcode
-    "http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=#{URI.escape(self.url)}"
+  def barcode(size = 150)
+    "http://chart.apis.google.com/chart?chs=#{size}x#{size}&cht=qr&chl=#{URI.escape(self.url)}"
   end
     
   def crypted_id

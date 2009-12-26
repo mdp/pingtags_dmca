@@ -1,0 +1,11 @@
+#home
+  %div{:style => 'text-align:center'}
+    %img{:src => current_user.barcode(120 )} 
+    %h1= current_user.name
+    %p.headline= current_user.headline
+    #avatar
+      %img{:src=> current_user.picture_url }
+    %p.summary= current_user.summary
+  %h3 Contact Info
+  
+  %h3 Scans

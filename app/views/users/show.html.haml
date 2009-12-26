@@ -19,16 +19,16 @@
       %li.arrow
         %a{:href => "mailto:#{@user.email}", :rel => "external"}
           = @user.email
-    %li.arrow
-      %a{:href => 'tel:4049660171', :rel => 'external'}
-        +1-404-966-0171
+    -if @user.phone_number
+      %li.arrow
+        %a{:href => 'tel:#{@user.phone_number}', :rel => 'external'}
+          =@user.phone_number
   %h4 Links
   %ul.rounded
     - @user.links.each do |link|
       %li.forward
-        %a{:href => link[:url], :target => '_blank'}
-          =link[:name]
-
+        =tracked_link_to link[:name], link[:url], @scan.id, :target => '_blank'
+        
 #about
   .centered
     %p

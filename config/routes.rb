@@ -1,13 +1,17 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resource :account, :controller => "users"  
-  map.connect 'register', :controller => 'users', :action => 'new'
-  map.connect 'login', :controller => 'user_sessions', :action => 'new'
+  map.connect 'signup', :controller => 'user_sessions', :action => 'new'
+  map.connect 'login', :controller => 'user_sessions', :action => 'linkedin'
   map.resources :users
+  map.resource :account, :member => {:update_contact => :get}
   map.resource :user_session, :collection => {:linkedin => :get}
 
   map.oauth_callback 'oauth_verify', :controller => 'user_sessions', :action => 'create'
   
+  map.link '/l', :controller => 'links', :action => 'create'
+  
   map.tag '/:crypt_id', :controller => 'users', :action => 'show'
+  
+  # Redirection for links to track clicks
 
   # The priority is based upon order of creation: first created -> highest priority.
 

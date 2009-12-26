@@ -1,0 +1,8 @@
+%h1 Please update the contact information on you're PingTag
+
+= form_for current_user, :url => { :action => "update" } do |f|
+  %label Email
+  = f.text_field 'email'
+  %label Phone number
+  = f.text_field 'phone_number'
+  = submit_tag "Update Information"

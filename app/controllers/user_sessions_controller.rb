@@ -19,7 +19,7 @@ class UserSessionsController < ApplicationController
     if user
       UserSession.create(user, true)
       flash[:message] = "Logged in as #{current_user.first_name} #{current_user.last_name}"
-      render
+      redirect_to account_path
     else
       flash[:message] = 'You must authorize PingTags to use your LinkedIn account'
       render :new

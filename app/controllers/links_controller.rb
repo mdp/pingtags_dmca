@@ -1,27 +1,12 @@
 class LinksController < ApplicationController
   
-  def redirect
-    if params[:id]
-      link = self.find_by_id(params[:id])
-      Click.create(:link_id => params[:id], :scan_id => params[:sid])
-    end
-    redirect_to link.destination_url
-  end
-  
   def create
-    
-  end
-  
-  def edit
-    
-  end
-  
-  def update
-    
-  end
-  
-  def destroy
-    
+    if @click = Click.first(:conditions => ['scan_id = ? AND link_href = ?', params[:scan_id], params[:link_href]]) 
+      @click.update_attribute(:created_at, Time.now)
+    else 
+      @click = Click.create(:link => params[:link], :link_href => params[:link_href], :scan_id => params[:scan_id])
+    end
+    redirect_to @click.link_href
   end
   
 end

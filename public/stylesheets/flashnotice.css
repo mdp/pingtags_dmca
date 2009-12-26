@@ -1,0 +1,17 @@
+
+#flash_message{
+  display:none;
+}
+
+.flash_message_bar{
+  text-align:center;
+  display: block;
+  position:fixed;
+  bottom:0px;
+  width:100%;
+  z-index:1003;
+  color:#0063AD;
+  background-color:#000;
+  padding:8px;
+	font-size:3em;
+}

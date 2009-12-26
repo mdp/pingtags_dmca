@@ -5,10 +5,11 @@
     %title
       Top Remark:
       = controller.to_s
-    = stylesheet_link_tag 'master'
+    = stylesheet_link_tag 'reset', 'text', '960', 'master'
   %body
-    %p{ :style => "color: green" }
-    #flash.container_16
-      = flash[:notice]
-
-      = yield
+    .container_12
+      .grid_6.prefix_3
+        %p{ :style => "color: green" }
+        #flash
+          = flash[:notice]
+        = yield

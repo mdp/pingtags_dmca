@@ -3,8 +3,7 @@ require 'digest'
 
 class Scan < ActiveRecord::Base
   belongs_to :user
-  
-  before_create :build_tracking_cookie
+  belongs_to :device
   
   def ip_address=(ip)
     if ip.instance_of?(String)
@@ -20,14 +19,6 @@ class Scan < ActiveRecord::Base
   
   def make
     UserAgent.parse(self.user_agent)[:make]
-  end
-  
-  private
-  
-  def build_tracking_cookie
-    unless self.tracking_cookie
-      self.tracking_cookie = Digest::SHA256.hexdigest(Time.now.to_s)
-    end
   end
   
 end

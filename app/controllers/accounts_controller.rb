@@ -1,0 +1,50 @@
+class AccountsController < ApplicationController
+  before_filter :ensure_email, :except => [:update_contact, :update]
+  
+  def show
+    
+  end
+  
+  def update
+    if params[:user]
+      current_user.update_attributes(params[:user])
+      if current_user.save
+        flash[:message] = "Updated!"
+        redirect_to account_url
+      else
+        render "show"
+      end
+    end
+  end
+  
+  def update_contact
+    if params[:user]
+      current_user.update_attributes(params[:user])
+      if current_user.save
+        flash[:message] = "Updated!"
+        redirect_to account_url
+      else
+        render
+      end
+    end
+  end
+  
+  private
+  
+  def ensure_email
+    # unless a user has an email address, force them to give one
+    # we also check to see if it's been stuck in a session, such as
+    # on signup
+    unless current_user.email
+      if session[:email]
+        current_user.email = session[:email]
+        unless current_user.save
+          redirect_to update_contact_account_path
+        end
+      else
+        redirect_to update_contact_account_path
+      end
+    end
+  end
+  
+end
