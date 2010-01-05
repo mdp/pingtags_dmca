@@ -19,6 +19,7 @@ class AccountsController < ApplicationController
   
   def update_contact
     @user = current_user
+    render :layout => 'simple'
   end
   
   private

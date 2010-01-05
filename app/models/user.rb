@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
       :access_token => access_token.token,
       :secret_token => access_token.secret
     }
-    if opts
-      user.attributes = opts
+    if opts[:email] && !opts[:email].blank?
+      user.email = opts[:email]
     end
     user.save
     user
