@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
   
   def create
+    render :layout => 'simple'
   end
   
   # AJAX ping or form submit
