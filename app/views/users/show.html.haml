@@ -19,7 +19,7 @@
       %li.arrow
         %a{:href => "mailto:#{@user.email}", :rel => "external"}
           = @user.email
-    -if @user.phone_number
+    -unless @user.phone_number.blank?
       %li.arrow
         %a{:href => 'tel:#{@user.phone_number}', :rel => 'external'}
           =@user.phone_number

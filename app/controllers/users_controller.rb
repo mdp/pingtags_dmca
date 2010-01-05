@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :require_no_user, :only => :create
   
   def show
     @user = User.find_by_crypt_id(params[:crypt_id])
