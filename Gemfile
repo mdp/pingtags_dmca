@@ -1,7 +1,7 @@
 clear_sources
 source 'http://gemcutter.org'
 
-disable_system_gems
+# disable_system_gems
 
 bundle_path 'vendor/gems'
 
@@ -14,3 +14,4 @@ gem "nokogiri"
 gem "four_bites_aes"
 gem "nokogiri"
 gem "mysql"
+gem "fakeweb"

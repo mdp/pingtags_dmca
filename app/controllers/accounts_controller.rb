@@ -2,7 +2,7 @@ class AccountsController < ApplicationController
   before_filter :ensure_email, :except => [:update_contact, :update]
   
   def show
-    
+    @user = current_user
   end
   
   def update
@@ -12,21 +12,13 @@ class AccountsController < ApplicationController
         flash[:message] = "Updated!"
         redirect_to account_url
       else
-        render "show"
+        render "update_contact"
       end
     end
   end
   
   def update_contact
-    if params[:user]
-      current_user.update_attributes(params[:user])
-      if current_user.save
-        flash[:message] = "Updated!"
-        redirect_to account_url
-      else
-        render
-      end
-    end
+    @user = current_user
   end
   
   private

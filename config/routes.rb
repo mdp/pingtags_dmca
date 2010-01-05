@@ -1,13 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
-  map.connect 'signup', :controller => 'user_sessions', :action => 'new'
-  map.connect 'login', :controller => 'user_sessions', :action => 'linkedin'
+  map.connect 'authenticate', :controller => 'user_sessions', :action => 'new'
   map.resources :users
   map.resource :account, :member => {:update_contact => :get}
-  map.resource :user_session, :collection => {:linkedin => :get}
+  map.resources :user_sessions, :collection => {:linkedin => :get}
 
-  map.oauth_callback 'oauth_verify', :controller => 'user_sessions', :action => 'create'
+  map.oauth_callback '/oauth_callback', :controller => 'user_sessions', :action => 'oauth_callback'
   
   map.link '/l', :controller => 'links', :action => 'create'
+  map.login '/login', :controller => 'user_sessions', :action => 'new'
+  map.login '/signup', :controller => 'users', :action => 'create'
+  map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
   
   map.tag '/:crypt_id', :controller => 'users', :action => 'show'
   
@@ -52,6 +54,7 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
+  map.root :controller => 'users', :action => 'create'
   map.profile '/:crypt_id', :controller => 'users', :action => 'show'
 
 end

@@ -11,7 +11,7 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
     when /login/
-      '/login'
+      '/authenticate'
     
     # Add more mappings here.
     # Here is a more fancy example:

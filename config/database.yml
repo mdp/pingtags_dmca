@@ -16,3 +16,6 @@ cucumber:
   <<: *defaults
   database: pingtag_test
   
+internetless:
+  <<: *defaults
+  

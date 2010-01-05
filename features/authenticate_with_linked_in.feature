@@ -14,5 +14,4 @@ Feature: Authenticate with LinkedIn
   Scenario: When I authorize PingTag
     Given I authorize PingTags
     When I return to PingTags
-    Then I should see "Thanks"
-    And I should see "Logged in as Mark Percival"
+    Then I should see Logged in successfully as Mark Percival

@@ -1,0 +1,8 @@
+#simple_box 
+  %h1.header PingTags is currently in beta.
+  .box
+    You can sign up for an account using linked in.
+    - form_for UserSession.new do |f|
+      %label Email
+      = text_field_tag :email
+      = submit_tag 'Signup using LinkedIn', :class => 'bright'

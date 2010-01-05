@@ -8,12 +8,11 @@ class UsersController < ApplicationController
     render :layout => 'iphone'
   end
   
-  # AJAX ping or form submit
-  def ping
+  def create
   end
   
-  def signup
-    @user = User.create(params[:user])
+  # AJAX ping or form submit
+  def ping
   end
   
   private

@@ -1,11 +1,26 @@
 #home
-  %div{:style => 'text-align:center'}
-    %img{:src => current_user.barcode(120 )} 
-    %h1= current_user.name
-    %p.headline= current_user.headline
+  %div{:class => 'grid_4 prefix_2'}
+    %h2.heading LinkedIn Profile
     #avatar
       %img{:src=> current_user.picture_url }
+    %p
+      = current_user.name
+      %br
+      = current_user.headline
     %p.summary= current_user.summary
-  %h3 Contact Info
-  
-  %h3 Scans
+    %h6 
+      Contact Details
+      %span.small (edit)
+    %p
+      = current_user.email
+
+  %div{:class => 'grid_4 omega'}
+    %h2.heading PingTag QR Code
+    %img{:src => current_user.barcode(175)}
+  %div.clear
+  %div.grid_8.prefix_2
+    %h2.heading Scans
+    -if current_user.scans.count > 0
+      
+    -else
+      %p No scans yet

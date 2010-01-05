@@ -1,0 +1,12 @@
+#simple_box 
+  %h1.header Please add contact information to your PingTags
+  .box
+    - form_for @user, :url => account_path do |f|
+      %label
+        Email
+        %small (required)
+      = f.text_field :email
+      %label
+        Phone Number
+      = f.text_field :phone_number
+      = submit_tag 'Update contact info', :class => 'bright big_button'

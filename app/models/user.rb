@@ -1,6 +1,8 @@
 require 'uri'
 
 class User < ActiveRecord::Base
+  has_many :scans
+  
   acts_as_authentic do |c|
     c.validate_email_field = false
   end
@@ -8,7 +10,7 @@ class User < ActiveRecord::Base
   # We create accounts before email sometimes, so allow nil until it's set
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :allow_nil => true
   
-  def self.initialize_with_access_token(access_token)
+  def self.create_or_update_with_access_token(access_token, opts = {})
     path = "/v1/people/~:(id,first-name,last-name,industry,headline,summary,picture-url,location,member-url-resources)"
     profile = Nokogiri::XML.parse(access_token.get(path).body)
     li_id = profile.xpath('//id').first.content.strip
@@ -18,15 +20,19 @@ class User < ActiveRecord::Base
       :access_token => access_token.token,
       :secret_token => access_token.secret
     }
-    if user.save
-      user
-    else
-      nil
+    if opts
+      user.attributes = opts
     end
+    user.save
+    user
   end
   
   def self.find_by_crypt_id(id)
-    self.find(cipher.decode(id.to_i(36)))
+    if user = self.find(cipher.decode(id.to_i(36)))
+      user
+    else
+      raise ActiveRecord::NotFound
+    end
   end
   
   def url
@@ -34,7 +40,7 @@ class User < ActiveRecord::Base
   end
   
   def barcode(size = 150)
-    "http://chart.apis.google.com/chart?chs=#{size}x#{size}&cht=qr&chl=#{URI.escape(self.url)}"
+    "http://chart.apis.google.com/chart?chs=#{size}x#{size}&cht=qr&chl=#{URI.escape(self.url)}&chld=L|1"
   end
     
   def crypted_id
