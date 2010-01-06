@@ -4,6 +4,7 @@ require 'digest'
 class Scan < ActiveRecord::Base
   belongs_to :user
   belongs_to :device
+  has_many :clicks
   
   def ip_address=(ip)
     if ip.instance_of?(String)

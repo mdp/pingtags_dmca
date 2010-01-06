@@ -24,11 +24,17 @@
       %table
         %tbody
           %tr
+            %th
             %th Device
+            %th Clicks
             %th Time
           -current_user.scans.each do |scan|
             %tr
+              %td.icon=image_tag 'scan.png'
               %td=scan.device.make
-              %td="#{time_ago_in_words(scan.created_at)} ago"
+              %td=scan.clicks.count
+              %td
+                %a{:href => scan_path(scan)}
+                  ="#{time_ago_in_words(scan.created_at)} ago"
     -else
       %p No scans yet

@@ -2,7 +2,7 @@ body {
   background: #FCFCFC; }
 
 #header {
-  color: #FCFCFC; }
+  color: #222; }
   #header h1.logo {
     margin: 0;
     padding-top: 15px; }
@@ -137,17 +137,28 @@ a {
   color: #00A2D7;
   text-decoration: none; }
 
-#content table {
-  border-left: 1px solid #D8D8D8;
-  border-right: 1px solid #D8D8D8;
-  border-top: 1px solid #D8D8D8;
-  width: 100%; }
-#content th {
+table {
+  border: 1px solid #D8D8D8;
+  width: 100%;
+  border-collapse: separate;
+  display: table; }
+
+th {
   background-color: #EAEAEA;
   border-bottom: 1px solid #D8D8D8;
   color: #999999;
   font-weight: normal;
-  padding: 0.5em 0.3em;
+  padding: 0.3em 0.3em;
+  text-align: left; }
+
+td.icon {
+  width: 1em; }
+
+td {
+  background-color: #FFF;
+  color: #222;
+  font-weight: normal;
+  padding: 0.3em 0.3em;
   text-align: left; }
 
 .center {
@@ -169,7 +180,7 @@ a {
     width: 400px;
     padding: 30px 30px;
     margin: 10px auto 10px auto;
-    background: #fff;
+    background: #DDD;
     -moz-border-radius: 11px;
     -khtml-border-radius: 11px;
     -webkit-border-radius: 11px;
