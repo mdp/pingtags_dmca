@@ -1,4 +1,5 @@
 class AccountsController < ApplicationController
+  before_filter :require_user
   before_filter :ensure_email, :except => [:update_contact, :update]
   
   def show
