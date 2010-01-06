@@ -30,30 +30,55 @@
         =tracked_link_to link[:name], link[:url], @scan.id, :target => '_blank'
         
 #about
+  .toolbar
+    %h1 Pingtags
+    %a{:href => '#', :class => 'back'}
+      Back
   .centered
     %p
-      %strong
-        PingTags
       %br
       Beta
       %br
       %a{ :href => "http://squarepush.com" }
         Created by SquarePush
-    %p
-      %em
-        Create your own pingtag at
-        %br
-        %a{ :href => "http://pingtags.com" }
-          pingtags.com
-    %p
-      %br
-      %br
-      %a.grayButton.goback{ :href => "#" }
-        Close
+  %ul.rounded 
+    %li.arrow.centered
+      %a{:href => "#signup"}
+        Create your own PingTag
+#signup
+  .toolbar
+    %h1 Pingtags
+    %a{:href => '#', :class => 'back'}
+      Back
+  .centered
+    %p Get your own PingTag by signing in with LinkedIn
+  -form_for UserSession.new do |f|
+    %ul.edit.rounded
+      %li
+        = text_field_tag :email, '', :placeholder => 'Email'
+      %li.forward
+        %a{:href => "#", :onclick => "$('form#new_user_session').submit();"} Signup using LinkedIn
       
 #ping
-  %p
-    %br
-    %br
-    %a.grayButton.goback{ :href => "#" }
-      Cancel
+  .toolbar
+    %h1 Pingtags
+    %a{:href => '#', :class => 'back'}
+      Back
+  .centered
+    %h1 Coming Soon
+    %p
+      We are waiting on LinkedIn to fix a bug on their system.
+      Once this is done, you'll have the ability to connect with this
+      person via LinkedIn.
+      %br
+      Thanks for your patience!
+      %br
+  %a.grayButton.goback{ :href => "#" }
+    Go Back
+- content_for :script do    
+  :javascript 
+    $(function(){
+      $("a#submit_button").click(function () {
+        $(this).submit(); 
+      });
+    });

@@ -9,41 +9,24 @@ class UserAgent
     }
   end
   
-  def class(ua)
-    case ua
-    when /iphone/i
-      "iphone"
-    when /android/i
-      "android"
-    when /blackberry/i
-      "blackberry"
-    when /Windows CE/i
-      "msmobile"
-    when /firefox/i
-      "desktop"
-    when /MSIE/
-      "desktop"
-    else
-      "wap"
-    end
-  end
-  
   def make(ua)
     case ua
     when /iphone/i
-      "iphone"
+      "iPhone"
     when /android/i
-      "android"
+      "Android"
     when /blackberry/i
-      "blackberry"
+      "Blackberry"
     when /Windows CE/i
-      "msmobile"
+      "MS Mobile"
     when /firefox/i
-      "desktop"
+      "Desktop"
     when /MSIE/
-      "desktop"
+      "Desktop"
+    when /Mozilla/
+      "Desktop"
     else
-      "unknown"
+      "Unknown"
     end
   end
   

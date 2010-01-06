@@ -10,17 +10,18 @@
     = stylesheet_link_tag '/jqtouch/theme.min.css'
     = stylesheet_link_tag '/jqtouch/app.css'
     = javascript_include_tag 'jquery', '/jqtouch/jqtouch.min.js', :cache => true
-  :javascript
+    :javascript
 
-    $.jQTouch({
-        icon: 'jqtouch.png',
-        statusBar: 'black-translucent',
-        preloadImages: [
-            '/jqtouch/img/chevron.png',
-            '/jqtouch/img/back_button_clicked.png',
-            '/jqtouch/img/button_clicked.png'
-            ]
-    });
+      $.jQTouch({
+          icon: 'jqtouch.png',
+          statusBar: 'black-translucent',
+          preloadImages: [
+              '/jqtouch/img/chevron.png',
+              '/jqtouch/img/back_button_clicked.png',
+              '/jqtouch/img/button_clicked.png'
+              ]
+      });
+    = yield :script
 
   
 

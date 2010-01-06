@@ -21,6 +21,14 @@
   %div.grid_8.prefix_2
     %h2.heading Scans
     -if current_user.scans.count > 0
-      
+      %table
+        %tbody
+          %tr
+            %th Device
+            %th Time
+          -current_user.scans.each do |scan|
+            %tr
+              %td=scan.device.make
+              %td="#{time_ago_in_words(scan.created_at)} ago"
     -else
       %p No scans yet
