@@ -11,8 +11,8 @@
     %p.summary= @user.summary
   %ul.rounded 
     %li.centered
-      %a{:href => "#ping"}
-        Ping Me
+      %a{:href => "#connect"}
+        Connect via LinkedIn
   %h4 Contact Info
   %ul.rounded
     -if @user.email
@@ -59,7 +59,7 @@
       %li.forward
         %a{:href => "#", :onclick => "$('form#new_user_session').submit();"} Signup using LinkedIn
       
-#ping
+#connect
   .toolbar
     %h1 Pingtags
     %a{:href => '#', :class => 'back'}
@@ -75,10 +75,3 @@
       %br
   %a.grayButton.goback{ :href => "#" }
     Go Back
-- content_for :script do    
-  :javascript 
-    $(function(){
-      $("a#submit_button").click(function () {
-        $(this).submit(); 
-      });
-    });
