@@ -4,6 +4,7 @@ class AccountsController < ApplicationController
   
   def show
     @user = current_user
+    @scans = current_user.scans.paginate :page => params[:page]
   end
   
   def update

@@ -7,36 +7,49 @@
       = current_user.name
       %br
       = current_user.headline
+    %h6 Summary
     %p.summary= current_user.summary
     %h6 
       Contact Details
       %span.small
         %a{:href => update_contact_account_path}
           (edit)
-    %p
-      = current_user.email
+    %ul.dashed
+      %li
+        Email:
+        = current_user.email
+      -unless current_user.phone_number.blank?
+        %li
+          Phone
+          = current_user.phone_number
+      
 
   %div{:class => 'grid_4 omega'}
     %h2.heading PingTag QR Code
-    %img{:src => current_user.barcode(175)}
+    %img.grey_border{:src => current_user.barcode(175)}
   %div.clear
   %div.grid_8.prefix_2
     %h2.heading Scans
-    -if current_user.scans.count > 0
+    -if @scans.count > 0
       %table
         %tbody
           %tr
             %th
             %th Device
             %th Clicks
+            %th Location Data
             %th Time
-          -current_user.scans.each do |scan|
+          -@scans.each do |scan|
             %tr
               %td.icon=image_tag 'scan.png'
               %td=scan.device.make
               %td=scan.clicks.count
               %td
+                -if scan.location?
+                  &#9733;
+              %td
                 %a{:href => scan_path(scan)}
-                  ="#{time_ago_in_words(scan.created_at)} ago"
+                  ="#{time_in_words(scan.created_at)}"
+      = will_paginate @scans
     -else
       %p No scans yet

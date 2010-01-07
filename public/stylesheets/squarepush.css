@@ -153,6 +153,9 @@ ul.dashed li:first-child {
 #map {
   height: 500px; }
 
+.grey_border {
+  border: 1px solid #CCC; }
+
 #content tr {
   background: #F8F8F8;
   border-bottom: 1px solid #E1E1E1;

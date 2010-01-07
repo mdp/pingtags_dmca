@@ -7,9 +7,9 @@ module ApplicationHelper
   
   def time_in_words(time)
     if Time.now - time > 86400
-      "on #{time.strftime("%A %e %B %Y")}"
+      "#{time.strftime("%A %e %B %Y")}"
     else
-      "about #{time_ago_in_words(time)} ago"
+      "#{time_ago_in_words(time)} ago"
     end
   end
   
