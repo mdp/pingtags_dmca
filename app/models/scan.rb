@@ -8,6 +8,8 @@ class Scan < ActiveRecord::Base
   belongs_to :device
   has_many :clicks
   
+  default_scope :order => 'created_at DESC'
+  
   def ip_address=(ip)
     if ip.instance_of?(String)
       write_attribute(:ip_address, IPAddr.new(ip).to_i)
