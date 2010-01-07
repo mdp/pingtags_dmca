@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
   
   def tracked_device
-    if session[:device_id] && device = Device.first(session[:device_id])
+    if session[:device_id] && device = Device.find_by_id(session[:device_id])
       device
     else
       device = Device.create(:user_agent => request.user_agent)
