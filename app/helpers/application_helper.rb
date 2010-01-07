@@ -5,4 +5,12 @@ module ApplicationHelper
     link_to link, link_path(:link => link, :link_href => link_href, :scan_id => scan_id), opts
   end
   
+  def time_in_words(time)
+    if Time.now - time > 86400
+      "on #{time.strftime("%A %e %B %Y")}"
+    else
+      "about #{time_ago_in_words(time)} ago"
+    end
+  end
+  
 end

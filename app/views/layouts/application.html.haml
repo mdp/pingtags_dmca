@@ -8,7 +8,26 @@
     = stylesheet_link_tag 'reset', 'text', '960', 'squarepush', 'master'
   %body
     .container_12
-      #header.grid_8.prefix_2
-        %h1
-          Pingtags
+      #header
+        #logo.grid_6.prefix_2
+          %h1
+            Pingtags
+        #nav.grid_4
+          -if current_user
+            %ul
+              %li.first 
+                %a{:href => account_path}
+                  Dashboard
+              %li.last
+                %a{:href => logout_path}
+                  Logout
+          -else
+            %ul
+              %li.first
+                %a{:href => signup_path}
+                  Signup
+              %li.last
+                %a{:href => login_path}
+                  Login
+      
       = yield

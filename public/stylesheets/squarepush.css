@@ -24,41 +24,15 @@ body {
       #header .login-box a:hover {
         color: #FFF; }
 
-#navigation {
-  background-color: #555;
-  padding: 0;
-  position: relative;
-  height: 40px;
-  display: block;
-  width: auto;
-  border-bottom: 5px solid #898989;
-  margin-bottom: 20px; }
-
-ul#topnav {
-  margin: 0;
-  padding: 0 0 0 5px;
-  position: absolute;
-  bottom: 0px; }
-  ul#topnav li {
+#nav {
+  padding-top: 0.25em; }
+  #nav li {
+    margin: 0;
+    padding: 0 0.5em 0 0.5em;
     display: inline;
     list-style: none; }
-  ul#topnav a {
-    background: url('/images/stripe_bg_grey.png');
-    color: #FCFCFC;
-    display: block;
-    float: left;
-    font-size: 1.3em;
-    font-weight: bold;
-    margin: 0 4px 0 0;
-    padding: 7px 10px;
-    text-align: center;
-    text-decoration: none; }
-    ul#topnav a.active {
-      color: #FFF;
-      background: #898989; }
-    ul#topnav a:hover {
-      color: #FFF;
-      background: #00A2D7; }
+  #nav li.last {
+    border-left: 1px solid #222; }
 
 select {
   border: 1px solid #BBBBBB;
@@ -163,6 +137,18 @@ td {
 
 .center {
   text-align: center; }
+
+ul.dashed li {
+  list-style: none;
+  border-top: 1px dashed #ccc;
+  margin-left: 0.25em; }
+ul.dashed li:first-child {
+  border-top: none; }
+
+.note {
+  display: block;
+  font-size: 80%;
+  color: #999; }
 
 #content tr {
   background: #F8F8F8;

@@ -9,7 +9,7 @@
     = stylesheet_link_tag '/jqtouch/jqtouch.min.css'
     = stylesheet_link_tag '/jqtouch/theme.min.css'
     = stylesheet_link_tag '/jqtouch/app.css'
-    = javascript_include_tag 'jquery', '/jqtouch/jqtouch.min.js', :cache => true
+    = javascript_include_tag 'jquery', '/jqtouch/jqtouch.min.js',       'http://code.google.com/apis/gears/gears_init.js', 'geo', 'geo_setup', :cache => true
     :javascript
 
       $.jQTouch({
@@ -22,10 +22,12 @@
               ]
       });
     = yield :script
-
   
 
   %body
+    .hidden{:style => 'display: none;'}
+      #scan_id= @scan.id
+      #scan_hash= @scan.hmac
     %p{ :style => "color: green" }
     #flash.container_16
       = flash[:notice]

@@ -10,7 +10,9 @@
     %p.summary= current_user.summary
     %h6 
       Contact Details
-      %span.small (edit)
+      %span.small
+        %a{:href => update_contact_account_path}
+          (edit)
     %p
       = current_user.email
 

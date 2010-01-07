@@ -1,7 +1,9 @@
 require 'ipaddr'
 require 'digest'
+require 'openssl'
 
 class Scan < ActiveRecord::Base
+  HMAC_KEY = "Fuck Chilkat and their fucking google spam for HMAC Ruby libraries." unless defined?(HMAC_KEY)
   belongs_to :user
   belongs_to :device
   has_many :clicks
@@ -20,6 +22,10 @@ class Scan < ActiveRecord::Base
   
   def make
     UserAgent.parse(self.user_agent)[:make]
+  end
+  
+  def hmac
+    OpenSSL::HMAC.hexdigest(OpenSSL::Digest::Digest.new('sha1'), HMAC_KEY, self.id.to_s)
   end
   
 end

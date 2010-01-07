@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.connect 'authenticate', :controller => 'user_sessions', :action => 'new'
   map.resources :users
-  map.resources :scans
+  map.resources :scans, :member => {:update_location => :get}
   map.resource :account, :member => {:update_contact => :get}
   map.resources :user_sessions, :collection => {:linkedin => :get}
 
