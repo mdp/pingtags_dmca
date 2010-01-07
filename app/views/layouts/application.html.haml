@@ -6,6 +6,9 @@
       PingTags:
       = controller.class.to_s.gsub('Controller','')
     = stylesheet_link_tag 'reset', 'text', '960', 'squarepush', 'master'
+    = javascript_include_tag 'jquery', :cache => true
+    
+    =yield :scripts
   %body
     .container_12
       #header

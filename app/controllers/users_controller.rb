@@ -20,10 +20,14 @@ class UsersController < ApplicationController
   private
   
   def log_scan(user)
-    @scan = Scan.first(:conditions => ['user_id = ? AND device_id = ?', user.id, tracked_device.id]) || 
+    if @scan = Scan.first(
+                    :conditions => ['user_id = ? AND device_id = ?', user.id, tracked_device.id], 
+                    :order => "created_at DESC")
+    else 
       Scan.create(:user_id => user.id, :device_id => tracked_device.id)
-    @scan.ip_address = request.remote_ip
-    @scan.save
+      @scan.ip_address = request.remote_ip
+      @scan.save
+    end
     @scan
   end
   

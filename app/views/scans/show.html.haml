@@ -27,8 +27,27 @@
 
   %div{:class => 'grid_4 omega'}
     %h2.heading Location
-    -if @scan.lat and @scan.long
-      #location Foo
+    -if @scan.lat && @scan.long
+      #map
     -else
       No location information available for this click
   %div.clear
+  
+-if @scan.lat && @scan.long
+  -content_for :scripts do
+    %script{:src => '/javascripts/jqgooglemaps.js'}
+    -if 'production' == RAILS_ENV
+      %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true_or_false&amp;key=ABQIAAAAfe4JMQhRHwXz2cW23kXL_hRR1iDL153D07Lb-Ovd7YMar66DIRQFHW9nTMtUeoEMpBlX3CI8dXVPmA" }
+    -else
+      %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true_or_false&amp;key=ABQIAAAAfe4JMQhRHwXz2cW23kXL_hTJQa0g3IQ9GZqIMmInSLzwtGDKaBTqeUIIulGtEce__DN1UBOSz57eyQ" }
+    :javascript
+      $(document).ready(function() {  
+        $('#map').googleMaps({
+          latitude: #{@scan.lat}, 
+          longitude: #{@scan.long},
+          markers: {
+            latitude: #{@scan.lat}, 
+            longitude: #{@scan.long}
+          }
+        });  
+      });

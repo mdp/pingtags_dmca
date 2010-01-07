@@ -1,5 +1,5 @@
 class ScansController < ApplicationController
-  before_filter :require_user
+  before_filter :require_user, :except => [:update_location]
   before_filter :ensure_authorized, :only => [:show]
   
   def show
