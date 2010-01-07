@@ -37,9 +37,9 @@
   -content_for :scripts do
     %script{:src => '/javascripts/jqgooglemaps.js'}
     -if 'production' == RAILS_ENV
-      %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true_or_false&amp;key=ABQIAAAAfe4JMQhRHwXz2cW23kXL_hRR1iDL153D07Lb-Ovd7YMar66DIRQFHW9nTMtUeoEMpBlX3CI8dXVPmA" }
+      %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAfe4JMQhRHwXz2cW23kXL_hRR1iDL153D07Lb-Ovd7YMar66DIRQFHW9nTMtUeoEMpBlX3CI8dXVPmA" }
     -else
-      %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true_or_false&amp;key=ABQIAAAAfe4JMQhRHwXz2cW23kXL_hTJQa0g3IQ9GZqIMmInSLzwtGDKaBTqeUIIulGtEce__DN1UBOSz57eyQ" }
+      %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAfe4JMQhRHwXz2cW23kXL_hTJQa0g3IQ9GZqIMmInSLzwtGDKaBTqeUIIulGtEce__DN1UBOSz57eyQ" }
     :javascript
       $(document).ready(function() {  
         $('#map').googleMaps({
