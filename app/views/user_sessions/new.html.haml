@@ -1,8 +1,10 @@
 #simple_box 
   %h1.header PingTags is currently in beta.
   .box
-    Sign into your PingTag account with LinkedIn
-    %br
+    %p Sign into your PingTag account with LinkedIn
+
     = link_to 'Click here to login with LinkedIn', linkedin_user_sessions_path, :class => 'big_button'
+
+    = link_to 'cancel', root_path
 
   

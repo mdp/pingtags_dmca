@@ -9,7 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.link '/l', :controller => 'links', :action => 'create'
   map.login '/login', :controller => 'user_sessions', :action => 'new'
-  map.login '/signup', :controller => 'users', :action => 'create'
+  map.signup '/signup', :controller => 'users', :action => 'create'
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
   
   map.tag '/:crypt_id', :controller => 'users', :action => 'show'
@@ -55,7 +55,7 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
-  map.root :controller => 'users', :action => 'create'
+  map.root :controller => 'home', :action => 'index'
   map.profile '/:crypt_id', :controller => 'users', :action => 'show'
 
 end

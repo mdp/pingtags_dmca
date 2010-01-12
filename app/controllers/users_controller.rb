@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => :create
+  title 'Users'
   
   def show
     @user = User.find_by_crypt_id(params[:crypt_id])
@@ -10,6 +11,7 @@ class UsersController < ApplicationController
   end
   
   def create
+    @title = "Signup"
     render :layout => 'simple'
   end
   

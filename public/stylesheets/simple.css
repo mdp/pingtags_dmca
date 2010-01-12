@@ -1,0 +1,47 @@
+body {
+  background: url(/images/square_bg.png);
+  color: #222; }
+
+h1, h2, h3, h4 {
+  color: #222; }
+
+#simple_box {
+  margin: 15% auto;
+  border: none; }
+  #simple_box .header {
+    margin: 0 auto 0 auto; }
+  #simple_box .box {
+    color: #111;
+    width: 400px;
+    padding: 30px 30px;
+    margin: 10px auto 10px auto;
+    background: #FFF;
+    -moz-border-radius: 11px;
+    -khtml-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius: 11px;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -webkit-box-shadow: 3px 0px 7px #222;
+    -khtml-box-sizing: content-box;
+    box-sizing: content-box; }
+  #simple_box h1, #simple_box h2, #simple_box h3 {
+    text-align: center; }
+  #simple_box h1 {
+    color: #222;
+    margin-bottom: 0.5em; }
+  #simple_box p, #simple_box label, #simple_box span {
+    text-shadow: 1px 1px 1px #f2f2f2; }
+  #simple_box label {
+    color: #444;
+    display: block;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    text-align: left; }
+  #simple_box input[type='text'] {
+    width: 385px;
+    font-size: 1.5em;
+    margin-bottom: 0.75em;
+    border: 1px solid #999; }
+  #simple_box .explanation {
+    text-align: center; }

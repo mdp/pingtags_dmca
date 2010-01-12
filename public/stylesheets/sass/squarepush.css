@@ -2,12 +2,6 @@ body {
   background: #FCFCFC;
   border-top: 3px solid #222; }
 
-#video_placeholder {
-  display: block;
-  width: 480;
-  height: 270;
-  background-color: #666; }
-
 #home.intro {
   width: 100%;
   padding: 1.5em 0;
@@ -56,14 +50,7 @@ body {
     display: inline;
     list-style: none; }
   #nav li.last {
-    border-left: 1px solid #666; }
-
-#footer {
-  color: #999;
-  margin-top: 2em;
-  border-top: 1px solid #CCC; }
-  #footer a, #footer a:hover, #footer a:visited {
-    color: #999; }
+    border-left: 1px solid #FFF; }
 
 select {
   border: 1px solid #BBBBBB;
@@ -194,10 +181,6 @@ ul.dashed li:first-child {
   display: block;
   font-size: 85%;
   color: #999; }
-
-img.frame {
-  border-top: 4px solid #999;
-  border-bottom: 4px solid #999; }
 
 .dark {
   color: #666; }

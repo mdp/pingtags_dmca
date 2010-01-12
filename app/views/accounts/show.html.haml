@@ -1,5 +1,5 @@
 #home
-  %div{:class => 'grid_4 prefix_2'}
+  %div{:class => 'grid_6'}
     %h2.heading LinkedIn Profile
     #avatar
       %img{:src=> current_user.picture_url }
@@ -24,11 +24,11 @@
           = current_user.phone_number
       
 
-  %div{:class => 'grid_4 omega'}
+  %div{:class => 'grid_3 omega'}
     %h2.heading PingTag QR Code
     %img.grey_border{:src => current_user.barcode(175)}
   %div.clear
-  %div.grid_8.prefix_2
+  %div.grid_9
     %h2.heading Scans
     -if @scans.count > 0
       %table

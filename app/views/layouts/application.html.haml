@@ -4,7 +4,7 @@
     %meta{ :content => "text/html;charset=UTF-8", "http-equiv" => "content-type" }
     %title
       PingTags:
-      = controller.class.to_s.gsub('Controller','')
+      = title || controller.class.to_s.gsub('Controller','')
     = stylesheet_link_tag 'reset', 'text', '960', 'squarepush', 'master'
     = javascript_include_tag 'jquery', :cache => true
     
@@ -12,25 +12,25 @@
   %body
     .container_12
       #header
-        #logo.grid_6.prefix_2
+        #logo.grid_12
           %h1
             Pingtags
-        #nav.grid_4
-          -if current_user
-            %ul
-              %li.first 
-                %a{:href => account_path}
-                  Dashboard
-              %li.last
-                %a{:href => logout_path}
-                  Logout
-          -else
-            %ul
-              %li.first
-                %a{:href => signup_path}
-                  Signup
-              %li.last
-                %a{:href => login_path}
-                  Login
-      
+          #nav
+            -if current_user
+              %ul
+                %li.first 
+                  %a{:href => account_path}
+                    Dashboard
+                %li.last
+                  %a{:href => logout_path}
+                    Logout
+            -else
+              %ul
+                %li.first
+                  %a{:href => signup_path}
+                    Signup
+                %li.last
+                  %a{:href => login_path}
+                    Login
+      .clear
       = yield

@@ -4,9 +4,21 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  helper_method :current_user_session, :current_user
+  helper_method :current_user_session, :current_user, :title
 
   private
+    def self.title(new_title = nil)
+      if new_title
+        @title = new_title
+      else
+        @title
+      end
+    end
+    
+    def title
+      @title || self.class.title
+    end
+  
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find

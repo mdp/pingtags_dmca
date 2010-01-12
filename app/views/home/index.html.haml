@@ -1,0 +1,53 @@
+</div>
+#home.intro
+  .container_12.center
+    %div.grid_5.suffix_1
+      %h2.close Your business card is useful again
+      %h5.bright A scannable, clickable, trackable way to connect your business card with LinkedIn
+      %p
+        With Pingtags, you can link your business card to your LinkedIn profile
+        with a 
+        %em simple QR code. 
+        Signup below using LinkedIn and 
+        %em start using it in 30 seconds
+      %h3.close
+        %a.big_button{:href => signup_path}
+          Signup via LinkedIn
+        .note.dark
+          All beta users get a lifetime free account!
+    #video.grid_6
+      #video_placeholder
+        .clear
+      / %object{ :width => "480", :height => '270' }
+      /   %param{ :name => "allowfullscreen", :value => "true" }
+      /   %param{ :name => "allowscriptaccess", :value => "always" }
+      /   %param{ :name => "movie", :value => "http://vimeo.com/moogaloop.swf?clip_id=8549391&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" }
+      /   %embed{ :src => "http://vimeo.com/moogaloop.swf?clip_id=8549391&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1", :allowfullscreen => "true", :type => "application/x-shockwave-flash", :allowscriptaccess => "always", :height => "270", :width => "480" }
+    .clear
+    
+.container_12
+  
+  #scan.grid_4
+    %img.frame{:src => 'images/scan.jpg'}
+    %h2 Scan
+    %p 
+      When a user scans your QR Code, they'll be directed your personal page, where all
+      your LinkedIn information will be displayed along with your personal contact information
+
+  #click.grid_4
+    %img.frame{:src => 'images/click.jpg'}
+    %h2 Click
+    %p 
+      Anyone scanning your code will have the opportunity to email or call you without keying 
+      in any information. Making contacting you even easier.
+
+  #analyze.grid_4.omega
+    %img.frame{:src => 'images/analyze.jpg'}
+    %h2 Analyze
+    %p 
+      When you log into your PingTags account you'll be able to see how many people scanned
+      your barcode, what links they clicked, and a map showing exactly where they scanned the code.
+.container_12
+  #footer.grid_12
+    &copy; 
+    %a{:href => 'http://squarepush.com'} 2010 Squarepush LLC

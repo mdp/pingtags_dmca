@@ -3,9 +3,9 @@
   %head
     %meta{ :content => "text/html;charset=UTF-8", "http-equiv" => "content-type" }
     %title
-      Pingtags :
-      = controller.controller_name
-    = stylesheet_link_tag 'reset', 'text', '960', 'squarepush', 'master'
+      PingTags:
+      = title || controller.class.to_s.gsub('Controller','')
+    = stylesheet_link_tag 'reset', 'text', '960', 'squarepush', 'simple'
 
 
   %body

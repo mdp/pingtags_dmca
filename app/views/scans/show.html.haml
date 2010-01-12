@@ -1,5 +1,5 @@
 #home
-  %div{:class => 'grid_4 prefix_2'}
+  %div{:class => 'grid_4'}
     %h2.heading Scan Information
     %ul.dashed
       %li
@@ -25,7 +25,7 @@
     -else
       No clicks for this scan
 
-  %div{:class => 'grid_4 omega'}
+  %div{:class => 'grid_8 omega'}
     %h2.heading Location
     -if @scan.lat && @scan.long
       #map
