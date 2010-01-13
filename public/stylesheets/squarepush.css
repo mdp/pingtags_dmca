@@ -16,6 +16,18 @@ body {
   border-bottom: 3px solid #CCC;
   background: url(/images/square_bg.png); }
 
+#badge {
+  margin-bottom: 1.62em; }
+
+.avatar {
+  margin-right: 1.62em;
+  float: left;
+  border: 1px solid #333; }
+
+.bio .name {
+  font-size: 1.5em;
+  font-weight: bold; }
+
 #header {
   color: #222; }
   #header h1.logo {
@@ -186,7 +198,7 @@ td {
 ul.dashed li {
   list-style: none;
   border-top: 1px dashed #ccc;
-  margin-left: 0.25em; }
+  margin-left: 0em; }
 ul.dashed li:first-child {
   border-top: none; }
 
@@ -197,7 +209,7 @@ ul.dashed li:first-child {
 
 img.frame {
   border-top: 4px solid #999;
-  border-bottom: 4px solid #999; }
+  border-bottom: 4px solid #00A2D7; }
 
 .dark {
   color: #666; }

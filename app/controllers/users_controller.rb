@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   
   def log_scan(user)
     if @scan = Scan.first(
-                    :conditions => ['user_id = ? AND device_id = ?', user.id, tracked_device.id], 
+                    :conditions => ['user_id = ? AND device_id = ? AND created_at > ?', user.id, tracked_device.id, (Time.now - 30.minutes)], 
                     :order => "created_at DESC")
     else 
       @scan = Scan.create(:user_id => user.id, :device_id => tracked_device.id)

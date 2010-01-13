@@ -25,7 +25,7 @@ class ScansController < ApplicationController
   
   def ensure_authorized
     if params[:id] && @scan = Scan.find(params[:id])
-      raise NotAuthorized unless current_user.id == @scan.user_id
+      render :text => 'NotAuthorized', :status => 403 unless current_user.id == @scan.user_id
     end
   end
   

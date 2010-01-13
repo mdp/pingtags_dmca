@@ -39,8 +39,8 @@ class User < ActiveRecord::Base
     "HTTP://#{SHORT_DOMAIN}/#{crypted_id}"
   end
   
-  def barcode(size = 150)
-    "http://chart.apis.google.com/chart?chs=#{size}x#{size}&cht=qr&chl=#{URI.escape(self.url)}&chld=L|1"
+  def barcode(size = 150, padding = 1)
+    "http://chart.apis.google.com/chart?chs=#{size}x#{size}&cht=qr&chl=#{URI.escape(self.url)}&chld=L|#{padding}"
   end
     
   def crypted_id

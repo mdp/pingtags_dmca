@@ -1,15 +1,16 @@
 #home
   %div{:class => 'grid_6'}
-    %h2.heading LinkedIn Profile
-    #avatar
-      %img{:src=> current_user.picture_url }
-    %p
-      = current_user.name
-      %br
-      = current_user.headline
-    %h6 Summary
+    %h2.heading LinkedIn&trade; Profile
+    #badge
+      .avatar.grey_border
+        %img{:src=> current_user.picture_url }
+      .bio
+        .name= current_user.name
+        .headline= current_user.headline
+      .clear
+    %h6.close Summary
     %p.summary= current_user.summary
-    %h6 
+    %h6.close 
       Contact Details
       %span.small
         %a{:href => update_contact_account_path}
@@ -20,13 +21,13 @@
         = current_user.email
       -unless current_user.phone_number.blank?
         %li
-          Phone
+          Phone:
           = current_user.phone_number
       
 
   %div{:class => 'grid_3 omega'}
     %h2.heading PingTag QR Code
-    %img.grey_border{:src => current_user.barcode(175)}
+    %img.grey_border{:src => current_user.barcode(220, 0)}
   %div.clear
   %div.grid_9
     %h2.heading Scans
