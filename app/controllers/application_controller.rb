@@ -45,5 +45,11 @@ class ApplicationController < ActionController::Base
         redirect_to login_url
       end
     end
+    
+    def require_admin
+      unless current_user && current_user.admin
+        redirect_to login_url
+      end
+    end
 
 end
