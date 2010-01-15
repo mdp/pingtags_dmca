@@ -4,6 +4,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :scans, :member => {:update_location => :get}
   map.resource :account, :member => {:update_contact => :get}
   map.resources :user_sessions, :collection => {:linkedin => :get}
+  
+  map.namespace(:admin) do |admin|
+    admin.resources :users
+  end
 
   map.oauth_callback '/oauth_callback', :controller => 'user_sessions', :action => 'oauth_callback'
   

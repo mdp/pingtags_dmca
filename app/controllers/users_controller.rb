@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => :create
-  before_filter :require_admin, :only => [:index]
   title 'Users'
-  
-  def index
-    @users = User.all.paginate :page => params[:page]
-  end
   
   def show
     @user = User.find_by_crypt_id(params[:crypt_id])

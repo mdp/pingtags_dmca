@@ -1,0 +1,20 @@
+#home
+  %div.grid_9
+    %h2.heading Users
+    -if @users.count > 0
+      %table
+        %tbody
+          %tr
+            %th Name
+            %th Email
+            %th Scans
+            %th Created
+          -@users.each do |user|
+            %tr
+              %td=link_to user.name, admin_user_path(user)
+              %td=user.email
+              %td=user.scans.count
+              %td=user.created_at
+      = will_paginate @users
+    -else
+      %p No users yet
