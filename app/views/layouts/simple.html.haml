@@ -7,6 +7,7 @@
       = title || controller.class.to_s.gsub('Controller','')
     = stylesheet_link_tag 'reset', 'text', '960', 'squarepush', 'simple'
     = javascript_include_tag 'jquery', 'uservoice', :cache => true
+    = javascript_include_tag 'google', :cache => true
 
 
   %body
@@ -15,3 +16,12 @@
       = flash[:notice]
 
     = yield
+    
+  :javascript
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  :javascript
+    try {
+    var pageTracker = _gat._getTracker("UA-12488924-1");
+    pageTracker._trackPageview();
+    } catch(err) {}
