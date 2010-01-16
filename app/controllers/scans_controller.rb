@@ -14,16 +14,17 @@ class ScansController < ApplicationController
         scan.save!
         render :text => 'OK', :status => 200
       else
-        render :text => 'SECURITY FAIL!!! Stop, collaborate and listen.', :status => 403
+        render :text => 'You have failed to send a valid HMAC', :status => 403
       end
     else
-      render :text => 'YOU FAIL!!!', :status => 406
+      render :text => 'Not enough params', :status => 406
     end
   end
   
   private
   
   def ensure_authorized
+    return nil if current_user.admin?
     if params[:id] && @scan = Scan.find(params[:id])
       render :text => 'NotAuthorized', :status => 403 unless current_user.id == @scan.user_id
     end
