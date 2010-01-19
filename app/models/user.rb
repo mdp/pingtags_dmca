@@ -74,19 +74,21 @@ class User < ActiveRecord::Base
   end
   
   def summary
-    profile.xpath('//summary[1]').inner_text.to_s.strip    
+    profile.xpath('//summary[1]').inner_text.to_s.strip
   end
   
   def headline
-    profile.xpath('//headline[1]').inner_text.to_s.strip    
+    profile.xpath('//headline[1]').inner_text.to_s.strip
   end
   
   def picture_url
-    profile.xpath('//picture-url[1]').inner_text.to_s.strip    
+    if pic = profile.xpath('//picture-url[1]').inner_text
+      pic.to_s.strip
+    end
   end
   
   def industry
-    profile.xpath('//industry[1]').inner_text.to_s.strip    
+    profile.xpath('//industry[1]').inner_text.to_s.strip
   end
 
 
