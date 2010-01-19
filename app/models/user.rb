@@ -82,8 +82,8 @@ class User < ActiveRecord::Base
   end
   
   def picture_url
-    if pic = profile.xpath('//picture-url[1]').inner_text
-      pic.to_s.strip
+    unless profile.xpath('//picture-url[1]').inner_text.to_s.strip.blank?
+      profile.xpath('//picture-url[1]').inner_text.to_s.strip
     end
   end
   
