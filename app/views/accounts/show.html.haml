@@ -2,8 +2,9 @@
   %div{:class => 'grid_6'}
     %h2.heading LinkedIn&trade; Profile
     #badge
-      .avatar.grey_border
-        %img{:src=> @user.picture_url }
+      -if @user.picture_url
+        .avatar.grey_border
+          %img{:src=> @user.picture_url }
       .bio
         .name= @user.name
         .headline= @user.headline

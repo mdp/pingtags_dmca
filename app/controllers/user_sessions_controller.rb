@@ -23,6 +23,10 @@ class UserSessionsController < ApplicationController
   
   # Catch OAuth callbacks and create or logs in user
   def oauth_callback
+    unless params["oauth_verifier"]
+      flash[:message] = "You must grant PingTags access to your LinkedIn Account in order to login"
+      render :new and return
+    end
     request_token = OAuth::RequestToken.new(LinkedIn.client, session[:request_token], session[:request_token_secret])
     access_token = request_token.get_access_token(:oauth_verifier => params["oauth_verifier"])
     @user = User.create_or_update_with_access_token(access_token, :email => session[:email])

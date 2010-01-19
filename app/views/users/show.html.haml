@@ -6,8 +6,9 @@
   %div{:style => 'text-align:center'}
     %h1= @user.name
     %p.headline= @user.headline
-    #avatar
-      %img{:src=> @user.picture_url }
+    -if @user.picture_url
+      #avatar
+        %img{:src=> @user.picture_url }
     %p.summary= @user.summary
   %ul.rounded 
     %li.centered
