@@ -10,7 +10,7 @@ class ScansController < ApplicationController
     if params[:lat] && params[:long] && params[:id] && params[:scan_hash]
       scan = Scan.find(params[:id])
       if scan.hmac == params[:scan_hash]        
-        scan.attributes = {:lat => params[:lat], :long => params[:long]}
+        scan.attributes = {:latitude => params[:lat], :longitude => params[:long]}
         scan.save!
         render :text => 'OK', :status => 200
       else

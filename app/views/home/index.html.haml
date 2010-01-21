@@ -41,7 +41,36 @@
     %p 
       When you log into your PingTags account you'll be able to see how many people scanned
       your barcode, what links they clicked, and a map showing exactly where they scanned the code.
+  #recent_scans.grid_12.omega
+    %h2.heading Recent Scans
+    #map
+    
 .container_12
   #footer.grid_12
     &copy; 
     %a{:href => 'http://squarepush.com'} 2010 Squarepush LLC and powered by LinkedIn&trade;
+    
+-content_for :scripts do
+  %script{:src => '/javascripts/jqgooglemaps.js'}
+  -if 'production' == RAILS_ENV
+    %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAfe4JMQhRHwXz2cW23kXL_hRR1iDL153D07Lb-Ovd7YMar66DIRQFHW9nTMtUeoEMpBlX3CI8dXVPmA" }
+  -else
+    %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAfe4JMQhRHwXz2cW23kXL_hTJQa0g3IQ9GZqIMmInSLzwtGDKaBTqeUIIulGtEce__DN1UBOSz57eyQ" }
+%script
+  $(document).ready(function() {  
+  $('#map').googleMaps({
+  depth: 2,
+  markers: [
+  - last_scan = @scans.slice(-1)
+  - @scans.each do |scan|
+    {
+    latitude: #{scan.lat},
+    longitude: #{scan.long}
+    },
+  {
+  latitude: #{last_scan.lat},
+  longitude: #{last_scan.long}
+  }
+  ]
+  });  
+  });

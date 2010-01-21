@@ -27,13 +27,13 @@
 
   %div{:class => 'grid_8 omega'}
     %h2.heading Location
-    -if @scan.lat && @scan.long
+    -if @scan.latitude && @scan.longitude
       #map
     -else
       No location information available for this click
   %div.clear
   
--if @scan.lat && @scan.long
+-if @scan.latitude && @scan.longitude
   -content_for :scripts do
     %script{:src => '/javascripts/jqgooglemaps.js'}
     -if 'production' == RAILS_ENV

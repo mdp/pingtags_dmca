@@ -9,37 +9,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090610021930) do
+ActiveRecord::Schema.define(:version => 20100121045052) do
 
-  create_table "scans", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "device_id"
-    t.column   "ip_address", 'integer unsigned'
-    t.decimal  "lat", :precision => 9, :scale => 6
-    t.decimal  "long", :precision => 9, :scale => 6
-    t.decimal  "accuracy", :precision => 9, :scale => 6
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-  
-  create_table "devices", :force => true do |t|
-    t.string   "user_agent"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-  
-  create_table "pings", :force => true do |t|
-    t.string "email"
-    t.text   "comment"
-    t.integer "user_id"
-    t.datetime "created_at"
-  end
-  
   create_table "clicks", :force => true do |t|
     t.integer  "scan_id"
     t.string   "link_href"
     t.string   "link"
     t.datetime "created_at"
+  end
+
+  create_table "devices", :force => true do |t|
+    t.string   "user_agent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pings", :force => true do |t|
+    t.string   "email"
+    t.text     "comment"
+    t.integer  "user_id"
+    t.datetime "created_at"
+  end
+
+  create_table "scans", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "device_id"
+    t.integer  "ip_address"
+    t.decimal  "latitude",   :precision => 9, :scale => 6
+    t.decimal  "longitude",  :precision => 9, :scale => 6
+    t.decimal  "accuracy",   :precision => 9, :scale => 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

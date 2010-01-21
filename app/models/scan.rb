@@ -30,7 +30,15 @@ class Scan < ActiveRecord::Base
   end
   
   def location?
-    self.lat? && self.long?
+    self.latitude? && self.longitude?
+  end
+  
+  def lat
+    self.latitude
+  end
+  
+  def long
+    self.longitude
   end
   
 end
