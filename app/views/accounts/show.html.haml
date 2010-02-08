@@ -28,7 +28,12 @@
 
   %div{:class => 'grid_3 omega'}
     %h2.heading PingTag QR Code
-    %img.grey_border{:src => @user.barcode(220, 0)}
+    %a{:href => @user.barcode(220, 0)}
+      %img.grey_border{:src => @user.barcode(220, 0)}
+    %p
+      This code can be printed and placed on the back of your business card.
+      Simply right click and save the image. Your printer can place it on the back of your 
+      business card.
   %div.clear
   %div.grid_9
     %h2.heading Scans

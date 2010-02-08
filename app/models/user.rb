@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   end
   
   def url
-    "HTTP://#{SHORT_DOMAIN}/#{crypted_id}"
+    "http://#{SHORT_DOMAIN}/#{crypted_id}".downcase
   end
   
   def barcode(size = 150, padding = 1)
@@ -44,7 +44,11 @@ class User < ActiveRecord::Base
   end
     
   def crypted_id
-    self.class.cipher.encode(self.id).to_s(36).upcase
+    self.class.cipher.encode(self.id).to_s(36)
+  end
+  
+  def update_status
+    "I just signed up for my PingTag at <a href='http://pingtags.com'>http://pingtags.com</a>"
   end
   
   def name

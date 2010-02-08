@@ -1,0 +1,61 @@
+--- 
+dependencies: 
+- rails: = 2.3.5
+- haml: ">= 0"
+- oauth: ">= 0"
+- oauth: ">= 0"
+- authlogic: ">= 0"
+- nokogiri: ">= 0"
+- four_bites_aes: ">= 0"
+- nokogiri: ">= 0"
+- mysql: ">= 0"
+- fakeweb: ">= 0"
+- will_paginate: ">= 0"
+- factory_girl: ">= 0"
+- rspec: = 1.2.6
+- rspec-rails: ">= 0"
+specs: 
+- nokogiri: 
+    version: 1.4.1
+- activesupport: 
+    version: 2.3.5
+- four_bites_aes: 
+    version: 1.0.1
+- actionmailer: 
+    version: 2.3.5
+- will_paginate: 
+    version: 2.3.12
+- factory_girl: 
+    version: 1.2.3
+- rack: 
+    version: 1.0.1
+- actionpack: 
+    version: 2.3.5
+- rspec: 
+    version: 1.2.6
+- rspec-rails: 
+    version: 1.2.6
+- ruby-hmac: 
+    version: 0.4.0
+- oauth: 
+    version: 0.3.6
+- mysql: 
+    version: 2.8.1
+- authlogic: 
+    version: 2.1.3
+- rake: 
+    version: 0.8.7
+- haml: 
+    version: 2.2.19
+- activerecord: 
+    version: 2.3.5
+- fakeweb: 
+    version: 1.2.8
+- activeresource: 
+    version: 2.3.5
+- rails: 
+    version: 2.3.5
+hash: 354f5bd810d7cf7a5a3718b9b6458a0024383187
+sources: 
+- Rubygems: 
+    uri: http://gemcutter.org

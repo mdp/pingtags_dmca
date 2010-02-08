@@ -8,9 +8,6 @@ SHORT_DOMAIN = '2D4.ME' unless defined? SHORT_URL
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
-# Kill the gemspec warnings due to bundler
-Rails::VendorGemSourceIndex.silence_spec_warnings = true
-
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -45,7 +42,3 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
   
 end
-
-# Needed for rake
-require 'vendor/gems/environment.rb' # add dependenceies to load paths
-Bundler.require_env :optional_environment    # actually require the files

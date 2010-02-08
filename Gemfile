@@ -1,9 +1,5 @@
-clear_sources
-source 'http://gemcutter.org'
 
-# disable_system_gems
-
-bundle_path 'vendor/gems'
+source :gemcutter
 
 gem "rails", "2.3.5"
 gem "haml"
@@ -16,3 +12,6 @@ gem "nokogiri"
 gem "mysql"
 gem "fakeweb"
 gem "will_paginate"
+gem "factory_girl"
+gem "rspec", "= 1.2.6"
+gem "rspec-rails"
