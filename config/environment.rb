@@ -33,17 +33,15 @@ Rails::Initializer.run do |config|
   config.gem "rails", :version => "2.3.5"
   config.gem "haml"
   config.gem "oauth"
-  config.gem "oauth"
   config.gem "authlogic"
-  config.gem "nokogiri"
   config.gem "four_bites_aes"
   config.gem "nokogiri"
   config.gem "mysql"
   config.gem "fakeweb"
   config.gem "will_paginate"
-  config.gem "factory_girl"
-  config.gem "rspec", :version => "1.2.6"
-  config.gem "rspec-rails"
+  # config.gem "factory_girl"
+  # config.gem "rspec"
+  # config.gem "rspec-rails"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
