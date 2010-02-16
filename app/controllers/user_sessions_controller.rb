@@ -38,7 +38,7 @@ class UserSessionsController < ApplicationController
       pinged_user = User.find_by_crypt_id(session[:user_crypt_id])
       Ping.create(:sender => @user, :recipient => pinged_user )
       flash[:message] = "You succesfully pinged #{pinged_user.name}"
-      render 'users/show', :locals => {:user => pinged_user}
+      render 'users/show', :layout => 'iphone', :locals => {:user => pinged_user}
     elsif @user.errors.empty?
       UserSession.create(@user, true)
       flash[:message] = "Logged in successfully as #{current_user.first_name} #{current_user.last_name}"

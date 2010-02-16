@@ -1,12 +1,13 @@
-Hey 
-= @recipient.name
-,
+Hey #{@recipient.name},
 
-"Looks like #{@sender.name} just pinged you using your PingTag business card"
+%p
+  Looks like #{@sender.name} just pinged you using your PingTag business card
 
-You can find out more about them here - 
-= link_to user_url(@sender), user_url(@sender)
-or
-= link_to @sender.public_profile_url, @sender.public_profile_url
+%p
+  You can find out more about them here - 
+  = link_to user_url(@sender), user_url(@sender)
+  or
+  = link_to @sender.public_profile_url, @sender.public_profile_url
 
-Thanks for using PingTags!
+%p
+  Thanks for using PingTags!
