@@ -22,8 +22,8 @@
           = @user.email
     -unless @user.phone_number.blank?
       %li.arrow
-        %a{:href => 'tel:#{@user.phone_number}', :rel => 'external'}
-          =@user.phone_number
+        %a{:href => "tel:#{@user.phone_number}", :rel => "external"}
+          = @user.phone_number
   %h4 Links
   %ul.rounded
     - @user.links.each do |link|
@@ -53,12 +53,14 @@
       Back
   .centered
     %p Get your own PingTag by signing in with LinkedIn
-  -form_for UserSession.new do |f|
+  -form_for(UserSession.new, :html => {:id => 'signupForm'}) do |f|
+    =hidden_field_tag :source, 'signup'
     %ul.edit.rounded
       %li
         = text_field_tag :email, '', :placeholder => 'Email'
       %li.forward
-        %a{:href => "#", :onclick => "$('form#new_user_session').submit();"} Signup using LinkedIn
+        %a{:href => "#", :class => 'submitBtn'} Signup using LinkedIn
+
       
 #connect
   .toolbar
@@ -66,13 +68,21 @@
     %a{:href => '#', :class => 'back'}
       Back
   .centered
-    %h1 Coming Soon
-    %p
-      We are waiting on LinkedIn to fix a bug on their system.
-      Once this is done, you'll have the ability to connect with this
-      person via LinkedIn.
-      %br
-      Thanks for your patience!
-      %br
-  %a.grayButton.goback{ :href => "#" }
-    Go Back
+    %h1 Connect via LinkedIn
+  -form_for(UserSession.new, :html => {:id => 'pingForm'}) do |f|
+    =hidden_field_tag :user_crypt_id, @user.crypted_id
+    =hidden_field_tag :source, 'ping'
+    %ul.edit.rounded
+      %li
+        = text_field_tag :email, '', :placeholder => 'Email'
+      %li.forward
+        %a{:href => "#", :class => 'submitBtn'} Ping with LinkedIn
+        
+        
+:javascript
+  $('form#pingForm .submitBtn').click(function(){
+    $('form#pingForm').submit();
+  });
+  $('form#signupForm .submitBtn').click(function(){
+    $('form#signupForm').submit();
+  });

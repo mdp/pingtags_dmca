@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100121045052) do
+ActiveRecord::Schema.define(:version => 20100215160120) do
 
   create_table "clicks", :force => true do |t|
     t.integer  "scan_id"
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(:version => 20100121045052) do
   create_table "pings", :force => true do |t|
     t.string   "email"
     t.text     "comment"
-    t.integer  "user_id"
     t.datetime "created_at"
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
   end
 
   create_table "scans", :force => true do |t|
@@ -45,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20100121045052) do
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "phone_number"
-    t.string   "linked_in_id",                      :null => false
+    t.string   "linked_in_id",                             :null => false
     t.string   "access_token"
     t.string   "secret_token"
     t.datetime "created_at"
@@ -53,14 +54,15 @@ ActiveRecord::Schema.define(:version => 20100121045052) do
     t.datetime "authorized_at"
     t.text     "profile_xml"
     t.boolean  "admin"
-    t.string   "persistence_token",                 :null => false
-    t.integer  "login_count",        :default => 0, :null => false
-    t.integer  "failed_login_count", :default => 0, :null => false
+    t.string   "persistence_token",                        :null => false
+    t.integer  "login_count",        :default => 0,        :null => false
+    t.integer  "failed_login_count", :default => 0,        :null => false
     t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+    t.string   "source",             :default => "signup"
   end
 
 end

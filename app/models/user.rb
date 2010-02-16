@@ -2,6 +2,7 @@ require 'uri'
 
 class User < ActiveRecord::Base
   has_many :scans
+  has_many :pings, :foreign_key => 'recipient_id'
   
   acts_as_authentic do |c|
     c.validate_email_field = false
@@ -11,7 +12,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :allow_nil => true
   
   def self.create_or_update_with_access_token(access_token, opts = {})
-    path = "/v1/people/~:(id,first-name,last-name,industry,headline,summary,picture-url,location,member-url-resources)"
+    path = "/v1/people/~:(id,first-name,last-name,industry,headline,summary,picture-url,location,member-url-resources,public-profile-url)"
     profile = Nokogiri::XML.parse(access_token.get(path).body)
     li_id = profile.xpath('//id').first.content.strip
     user = User.find_or_initialize_by_linked_in_id(li_id)
@@ -67,6 +68,11 @@ class User < ActiveRecord::Base
       end
     end
     lnks
+  end
+  
+  def public_profile_url
+    url = profile.xpath('//public-profile-url').inner_text.to_s.strip
+    url.blank? ? nil : url
   end
   
   def last_name

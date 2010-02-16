@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <person>
-  <id>gNma67_AdI</id>
+  <id>pgTUbOOh0o</id>
   <first-name>Mark</first-name>
   <last-name>Percival</last-name>
-  <headline>Chief bottle washer and cook</headline>
+  <industry>Internet</industry>
+  <headline>Principle Engineer at SquarePush, LLC</headline>
+  <summary>Working to help companies build interesting and unique web/mobile applications that thrill customers.</summary>
+  <picture-url>http://media.linkedin.com/mpr/mprx/0_R7Vm6_owcWe3HkjzJweg6he5cSOfECjzMmaA6heqHeo0v6ovBWoCe8pVJiYrd5pJVu4Kdb9jAyNj</picture-url>
   <location>
-    <name>Atlanta Area</name>
+    <name>Greater Atlanta Area</name>
     <country>
       <code>us</code>
     </country>
   </location>
-  <industry>Information Technology and Services</industry>
-
-  <picture-url>http://media.linkedin.com/mpr/mpr/shrink_80_80/p/2/000/01c/359/041bc1b.jpg</picture-url>
+  <member-url-resources total="3">
+    <member-url>
+      <url>http://squarepush.com</url>
+      <name>SquarePush.com</name>
+    </member-url>
+    <member-url>
+      <url>http://webchicanery.com</url>
+      <name>Webchicanery - My Blog</name>
+    </member-url>
+    <member-url>
+      <url>http://twitter.com/markpercival</url>
+      <name>Follow Me on Twitter</name>
+    </member-url>
+  </member-url-resources>
+  <public-profile-url>http://www.linkedin.com/in/markpercival</public-profile-url>
 </person>

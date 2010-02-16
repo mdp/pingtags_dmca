@@ -12,6 +12,7 @@ Feature: Authenticate with LinkedIn
     Then I should be redirected to "linkedin.com"
     
   Scenario: When I authorize PingTag
-    Given I authorize PingTags
+    Given I signup with an email
+    And I authorize PingTags
     When I return to PingTags
-    Then I should see Logged in successfully as Mark Percival
+    Then I should see "Mark Percival"

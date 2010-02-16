@@ -4,7 +4,7 @@ development: &defaults
   user: root
   database: pingtag
 
-test:
+test: &TEST
   <<: *defaults
   database: pingtag_test
 

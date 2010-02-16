@@ -14,6 +14,8 @@ class UserSessionsController < ApplicationController
   
   def create
     session[:email] = params[:email]
+    session[:source] = params[:source]
+    session[:user_crypt_id] = params[:user_crypt_id]
     client = LinkedIn.client
     request_token = client.get_request_token(:oauth_callback => oauth_callback_url)
     session[:request_token]  = request_token.token
@@ -30,6 +32,11 @@ class UserSessionsController < ApplicationController
     request_token = OAuth::RequestToken.new(LinkedIn.client, session[:request_token], session[:request_token_secret])
     access_token = request_token.get_access_token(:oauth_verifier => params["oauth_verifier"])
     @user = User.create_or_update_with_access_token(access_token, :email => session[:email])
+    if session[:source] == 'ping' && session[:user_crypt_id]
+      pinged_user = User.find_by_crypt_id(session[:user_crypt_id])
+      Ping.create(:sender => @user, :recipient => pinged_user )
+      @user.update_attribute(:source, 'ping')
+    end
     if @user.errors.empty?
       UserSession.create(@user, true)
       flash[:message] = "Logged in successfully as #{current_user.first_name} #{current_user.last_name}"
@@ -47,5 +54,6 @@ class UserSessionsController < ApplicationController
     end
     redirect_back_or_default root_url
   end
+  
   
 end
