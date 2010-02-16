@@ -35,6 +35,7 @@ describe UserSessionsController do
       User.stub!(:create_or_update_with_access_token).and_return(@pinger)
       Ping.should_receive(:create).with(:sender => @pinger, :recipient => @pinged_user)
       get :oauth_callback, {:oauth_verifier => 'foo'}, {:user_crypt_id => '12345', :source => 'ping'}
+      response.should render_template('users/show')
     end
     
   end

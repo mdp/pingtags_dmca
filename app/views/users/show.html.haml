@@ -4,6 +4,8 @@
     %a{ :href => '#about', :class=>"button slideup", :id=>"infoButton" }
       About
   %div{:style => 'text-align:center'}
+    -if flash[:message]
+      #flash_message= flash[:message]
     %h1= @user.name
     %p.headline= @user.headline
     -if @user.picture_url
