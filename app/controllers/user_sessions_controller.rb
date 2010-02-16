@@ -33,7 +33,7 @@ class UserSessionsController < ApplicationController
     end
     request_token = OAuth::RequestToken.new(LinkedIn.client, session[:request_token], session[:request_token_secret])
     access_token = request_token.get_access_token(:oauth_verifier => params["oauth_verifier"])
-    @user = User.create_or_update_with_access_token(access_token, :email => session[:email], :source => params[:source])
+    @user = User.create_or_update_with_access_token(access_token, :email => session[:email], :source => session[:source])
     if session[:source] == 'ping' && session[:user_crypt_id]
       pinged_user = User.find_by_crypt_id(session[:user_crypt_id])
       Ping.create(:sender => @user, :recipient => pinged_user )
