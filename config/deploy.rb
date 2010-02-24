@@ -9,9 +9,9 @@ set :ssh_options, {:forward_agent => true }
 set :scm, :git
 set :deploy_via, :remote_cache
 
-role :web, "mpercival.com"                          # Your HTTP server, Apache/etc
-role :app, "mpercival.com"                          # This may be the same as your `Web` server
-role :db,  "mpercival.com", :primary => true # This is where Rails migrations will run
+role :web, "dev.squarepush.com"                          # Your HTTP server, Apache/etc
+role :app, "dev.squarepush.com"                          # This may be the same as your `Web` server
+role :db,  "dev.squarepush.com", :primary => true # This is where Rails migrations will run
 
 namespace :bundler do
   task :install, :roles => :app, :except => { :no_release => true }  do

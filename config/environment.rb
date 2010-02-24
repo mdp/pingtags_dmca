@@ -19,19 +19,6 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  
-  config.gem "rails", :version => "2.3.5"
-  config.gem "haml"
-  config.gem "oauth"
-  config.gem "authlogic"
-  config.gem "four_bites_aes"
-  config.gem "nokogiri"
-  config.gem "mysql"
-  config.gem "fakeweb"
-  config.gem "will_paginate"
-  # config.gem "factory_girl", :lib => false
-  # config.gem "rspec", :version => "1.3.0"
-  # config.gem "rspec-rails"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
