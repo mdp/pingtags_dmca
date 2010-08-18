@@ -1,5 +1,5 @@
 set :application, "pingtags"
-set :repository,  "git@github.com:markpercival/pingtag.git"
+set :repository,  "git@github.com:mdp/pingtag.git"
 set :deploy_to, "/vol/apps/#{application}"
 set :user, 'deploy'
 set :use_sudo, false
