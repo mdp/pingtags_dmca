@@ -174,7 +174,7 @@ end
 module Bundler
   ENV_LOADED   = true
   LOCKED_BY    = '0.9.26'
-  FINGERPRINT  = "bf036cc6de06279de67664580eff7c563020144d"
+  FINGERPRINT  = "ac609ea909816682fd03b310da4b21c7f394e4c7"
   HOME         = '/Users/mark/.bundle/ruby/1.8/bundler'
   AUTOREQUIRES = {:test=>[["factory_girl", false], ["fakeweb", false], ["rspec", false], ["rspec-rails", false]], :default=>[["authlogic", false], ["four_bites_aes", false], ["haml", false], ["hoptoad_notifier", false], ["liquid", false], ["mysql", false], ["nokogiri", false], ["oauth", false], ["will_paginate", false]], :development=>[["mongrel", false]]}
   SPECS        = [
