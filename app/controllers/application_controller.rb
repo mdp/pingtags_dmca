@@ -11,9 +11,12 @@ class ApplicationController < ActionController::Base
   def set_locale
     # if params[:locale] is nil then I18n.default_locale will be used
     if params[:locale]
-      I18n.locale = params[:locale]
+      locale = params[:locale]
     else
-      I18n.locale = extract_locale_from_accept_language_header
+      locale = extract_locale_from_accept_language_header
+    end
+    if locale && I18n.available_locales.include?(locale.to_sym)
+      I18n.locale = locale
     end
   end
 
@@ -21,7 +24,9 @@ class ApplicationController < ActionController::Base
   private
 
   def extract_locale_from_accept_language_header
-    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+    if request.env['HTTP_ACCEPT_LANGUAGE']
+      request.env['HTTP_ACCEPT_LANGUAGE'][/^[a-z]{2}/, 0]
+    end
   end
 
   def self.title(new_title = nil)
