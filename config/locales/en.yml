@@ -1,5 +1,57 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  home:
+    biz_card_is_useful: Your business card is useful again
+    slogan: A scannable, clickable, trackable way to connect your business card with LinkedIn&trade;
+    explanation: |
+        With Pingtags, you can link your business card to your LinkedIn&trade; profile with a
+        <em>simple QR code.</em>
+        Signup below using LinkedIn and
+        <em>start using it in 30 seconds</em>
+    scan: Scan
+    scan_details: |
+      When a user scans your QR Code, they'll be directed your personal page, where all
+      your LinkedIn information will be displayed along with your personal contact information
+    click: Click
+    click_details: |
+      Anyone scanning your code will have the opportunity to email or call you without keying
+      in any information. Making contacting you even easier.
+    analyze: Analyze
+    analyze_details: |
+      When you log into your PingTags account you'll be able to see how many people scanned
+      your barcode, what links they clicked, and a map showing exactly where they scanned the code.
+    recent_scans: Recent Scans
+
+  main:
+    login: Login
+    logout: Logout
+    signup: Signup
+    dashboard: Dashboard
+
+  login:
+    signin_with_linkedin: "Sign into your PingTag account with LinkedIn:"
+    signin_button: Click here to login with LinkedIn
+    cancel: Cancel
+    beta_notice: Pingtags is currently in beta
+    signup_with_linkedin: You can sign up for a free account using LinkedIn.
+    signup_button: Signup using LinkedIn
+    email: Email
+
+  profile:
+    linkedin_profile: LinkedIn&trade; Profile
+    pingtag_qr: PingTag QR Code
+    summary: Summary
+    contact: Contact Details
+    email: "Email:"
+    phone: "Phone:"
+    edit: edit
+    scans: Scans
+    no_scans: No scans yet
+    device: Device
+    clicks: Clicks
+    location: Location Data
+    time: Time
+    previous: Previous
+    next: Next
+    qr_explanation: |
+      This code can be printed and placed on the back of your business card. Simply right click and save the image.
+      Your printer can place it on the back of your business card.

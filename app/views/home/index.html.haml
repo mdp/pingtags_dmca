@@ -2,54 +2,45 @@
 #home.intro
   .container_12.center
     %div.grid_5.suffix_1
-      %h2.close Your business card is useful again
-      %h5.bright A scannable, clickable, trackable way to connect your business card with LinkedIn&trade;
-      %p
-        With Pingtags, you can link your business card to your LinkedIn&trade; profile
-        with a 
-        %em simple QR code. 
-        Signup below using LinkedIn and 
-        %em start using it in 30 seconds
+      %h2.close= t('home.biz_card_is_useful')
+      %h5.bright= t('home.slogan')
+      %p= t('home.explanation')
       %h3.close
         %a.big_button{:href => signup_path}
-          Signup via LinkedIn
+          Beta Signup Closed
         .note.dark
-          All beta users get a lifetime free account!
+          PingTags will still work for existing users, but signup has been halted. See more
+          %a{:href => ''} here
     #iphone.grid_6
       =image_tag 'iphone_screen.png'
     .clear
-    
+
 .container_12
-  
+
   #scan.grid_4
     %img.frame{:src => 'images/scan.jpg'}
-    %h2 Scan
-    %p 
-      When a user scans your QR Code, they'll be directed your personal page, where all
-      your LinkedIn information will be displayed along with your personal contact information
+    %h2= t('home.scan')
+    %p= t('home.scan_details')
 
   #click.grid_4
     %img.frame{:src => 'images/click.jpg'}
-    %h2 Click
-    %p 
-      Anyone scanning your code will have the opportunity to email or call you without keying 
-      in any information. Making contacting you even easier.
+    %h2= t('home.click')
+    %p= t('home.click_details')
 
   #analyze.grid_4.omega
     %img.frame{:src => 'images/analyze.jpg'}
-    %h2 Analyze
-    %p 
-      When you log into your PingTags account you'll be able to see how many people scanned
-      your barcode, what links they clicked, and a map showing exactly where they scanned the code.
+    %h2= t('home.analyze')
+    %p= t('home.analyze_details')
+
   #recent_scans.grid_12.omega
-    %h2.heading Recent Scans
+    %h2.heading= t('home.recent_scans')
     #map
-    
+
 .container_12
   #footer.grid_12
-    &copy; 
+    &copy;
     %a{:href => 'http://squarepush.com'} 2010 Squarepush LLC and powered by LinkedIn&trade;
-    
+
 -content_for :scripts do
   %script{:src => '/javascripts/jqgooglemaps.js'}
   -if 'production' == RAILS_ENV
@@ -57,7 +48,7 @@
   -else
     %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAfe4JMQhRHwXz2cW23kXL_hTJQa0g3IQ9GZqIMmInSLzwtGDKaBTqeUIIulGtEce__DN1UBOSz57eyQ" }
 %script
-  $(document).ready(function() {  
+  $(document).ready(function() {
   $('#map').googleMaps({
   depth: 2,
   markers: [
@@ -72,5 +63,5 @@
   longitude: #{last_scan.long}
   }
   ]
-  });  
+  });
   });

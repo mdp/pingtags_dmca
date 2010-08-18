@@ -1,10 +1,10 @@
 #simple_box 
-  %h1.header PingTags is currently in beta.
+  %h1.header= t('login.beta_notice')
   .box
-    %p Sign into your PingTag account with LinkedIn
+    %p= t('login.signin_with_linkedin')
 
-    = link_to 'Click here to login with LinkedIn', linkedin_user_sessions_path, :class => 'big_button'
+    = link_to t('login.signin_button'), linkedin_user_sessions_path, :class => 'big_button'
 
-    = link_to 'cancel', root_path
+    = link_to t('login.cancel'), root_path
 
   

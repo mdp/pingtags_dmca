@@ -21,18 +21,18 @@
               %ul
                 %li.first 
                   %a{:href => account_path}
-                    Dashboard
+                    = t('main.dashboard')
                 %li.last
                   %a{:href => logout_path}
-                    Logout
+                    = t('main.logout')
             -else
               %ul
                 %li.first
                   %a{:href => signup_path}
-                    Signup
+                    = t('main.signup')
                 %li.last
                   %a{:href => login_path}
-                    Login
+                    = t('main.login')
       .clear
       = yield
 
