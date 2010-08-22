@@ -175,36 +175,36 @@ module Bundler
   ENV_LOADED   = true
   LOCKED_BY    = '0.9.26'
   FINGERPRINT  = "ac609ea909816682fd03b310da4b21c7f394e4c7"
-  HOME         = '/Users/mark/.bundle/ruby/1.8/bundler'
+  HOME         = '/Users/mark/dev/sites/pingtags/vendor/bundle/bundler'
   AUTOREQUIRES = {:test=>[["factory_girl", false], ["fakeweb", false], ["rspec", false], ["rspec-rails", false]], :default=>[["authlogic", false], ["four_bites_aes", false], ["haml", false], ["hoptoad_notifier", false], ["liquid", false], ["mysql", false], ["nokogiri", false], ["oauth", false], ["will_paginate", false]], :development=>[["mongrel", false]]}
   SPECS        = [
         {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/rake-0.8.7/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/rake-0.8.7.gemspec", :name=>"rake"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/activesupport-2.3.8/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/activesupport-2.3.8.gemspec", :name=>"activesupport"},
+        {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/activesupport-2.3.8/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/activesupport-2.3.8.gemspec", :name=>"activesupport"},
         {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/rack-1.1.0/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/rack-1.1.0.gemspec", :name=>"rack"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/actionpack-2.3.8.gemspec", :name=>"actionpack"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/actionmailer-2.3.8/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/actionmailer-2.3.8.gemspec", :name=>"actionmailer"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/activerecord-2.3.8.gemspec", :name=>"activerecord"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/activeresource-2.3.8/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/activeresource-2.3.8.gemspec", :name=>"activeresource"},
+        {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/actionpack-2.3.8/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/actionpack-2.3.8.gemspec", :name=>"actionpack"},
+        {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/actionmailer-2.3.8/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/actionmailer-2.3.8.gemspec", :name=>"actionmailer"},
+        {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/activerecord-2.3.8/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/activerecord-2.3.8.gemspec", :name=>"activerecord"},
+        {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/activeresource-2.3.8/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/activeresource-2.3.8.gemspec", :name=>"activeresource"},
         {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/authlogic-2.1.4/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/authlogic-2.1.4.gemspec", :name=>"authlogic"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/cgi_multipart_eof_fix-2.5.0/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/cgi_multipart_eof_fix-2.5.0.gemspec", :name=>"cgi_multipart_eof_fix"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/daemons-1.0.10/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/daemons-1.0.10.gemspec", :name=>"daemons"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/factory_girl-1.3.1/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/factory_girl-1.3.1.gemspec", :name=>"factory_girl"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/fakeweb-1.2.8/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/fakeweb-1.2.8.gemspec", :name=>"fakeweb"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/fastthread-1.0.7/lib", "/Users/mark/.bundle/ruby/1.8/gems/fastthread-1.0.7/ext"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/fastthread-1.0.7.gemspec", :name=>"fastthread"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/four_bites_aes-1.0.1/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/four_bites_aes-1.0.1.gemspec", :name=>"four_bites_aes"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/gem_plugin-0.2.3/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/gem_plugin-0.2.3.gemspec", :name=>"gem_plugin"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/haml-3.0.13/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/haml-3.0.13.gemspec", :name=>"haml"},
+        {:load_paths=>["/Users/mark/dev/sites/pingtags/vendor/bundle/gems/cgi_multipart_eof_fix-2.5.0/lib"], :loaded_from=>"/Users/mark/dev/sites/pingtags/vendor/bundle/specifications/cgi_multipart_eof_fix-2.5.0.gemspec", :name=>"cgi_multipart_eof_fix"},
+        {:load_paths=>["/Users/mark/dev/sites/pingtags/vendor/bundle/gems/daemons-1.0.10/lib"], :loaded_from=>"/Users/mark/dev/sites/pingtags/vendor/bundle/specifications/daemons-1.0.10.gemspec", :name=>"daemons"},
+        {:load_paths=>["/Users/mark/dev/sites/pingtags/vendor/bundle/gems/factory_girl-1.3.1/lib"], :loaded_from=>"/Users/mark/dev/sites/pingtags/vendor/bundle/specifications/factory_girl-1.3.1.gemspec", :name=>"factory_girl"},
+        {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/fakeweb-1.2.8/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/fakeweb-1.2.8.gemspec", :name=>"fakeweb"},
+        {:load_paths=>["/Users/mark/dev/sites/pingtags/vendor/bundle/gems/fastthread-1.0.7/lib"], :loaded_from=>"/Users/mark/dev/sites/pingtags/vendor/bundle/specifications/fastthread-1.0.7.gemspec", :name=>"fastthread"},
+        {:load_paths=>["/Users/mark/dev/sites/pingtags/vendor/bundle/gems/four_bites_aes-1.0.1/lib"], :loaded_from=>"/Users/mark/dev/sites/pingtags/vendor/bundle/specifications/four_bites_aes-1.0.1.gemspec", :name=>"four_bites_aes"},
+        {:load_paths=>["/Users/mark/dev/sites/pingtags/vendor/bundle/gems/gem_plugin-0.2.3/lib"], :loaded_from=>"/Users/mark/dev/sites/pingtags/vendor/bundle/specifications/gem_plugin-0.2.3.gemspec", :name=>"gem_plugin"},
+        {:load_paths=>["/Users/mark/dev/sites/pingtags/vendor/bundle/gems/haml-3.0.13/lib"], :loaded_from=>"/Users/mark/dev/sites/pingtags/vendor/bundle/specifications/haml-3.0.13.gemspec", :name=>"haml"},
         {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/hoptoad_notifier-2.2.2/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/hoptoad_notifier-2.2.2.gemspec", :name=>"hoptoad_notifier"},
         {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/liquid-2.0.0/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/liquid-2.0.0.gemspec", :name=>"liquid"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/mongrel-1.1.5/lib", "/Users/mark/.bundle/ruby/1.8/gems/mongrel-1.1.5/ext"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/mongrel-1.1.5.gemspec", :name=>"mongrel"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/mysql-2.8.1/lib", "/Users/mark/.bundle/ruby/1.8/gems/mysql-2.8.1/ext"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/mysql-2.8.1.gemspec", :name=>"mysql"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/nokogiri-1.4.1/lib", "/Users/mark/.bundle/ruby/1.8/gems/nokogiri-1.4.1/ext"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/nokogiri-1.4.1.gemspec", :name=>"nokogiri"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/ruby-hmac-0.4.0/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/ruby-hmac-0.4.0.gemspec", :name=>"ruby-hmac"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/oauth-0.3.6/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/oauth-0.3.6.gemspec", :name=>"oauth"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/rails-2.3.8/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/rails-2.3.8.gemspec", :name=>"rails"},
+        {:load_paths=>["/Users/mark/dev/sites/pingtags/vendor/bundle/gems/mongrel-1.1.5/lib"], :loaded_from=>"/Users/mark/dev/sites/pingtags/vendor/bundle/specifications/mongrel-1.1.5.gemspec", :name=>"mongrel"},
+        {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/mysql-2.8.1/lib", "/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/mysql-2.8.1/ext"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/mysql-2.8.1.gemspec", :name=>"mysql"},
+        {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/nokogiri-1.4.1/lib", "/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/nokogiri-1.4.1/ext"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/nokogiri-1.4.1.gemspec", :name=>"nokogiri"},
+        {:load_paths=>["/Users/mark/dev/sites/pingtags/vendor/bundle/gems/ruby-hmac-0.4.0/lib"], :loaded_from=>"/Users/mark/dev/sites/pingtags/vendor/bundle/specifications/ruby-hmac-0.4.0.gemspec", :name=>"ruby-hmac"},
+        {:load_paths=>["/Users/mark/dev/sites/pingtags/vendor/bundle/gems/oauth-0.3.6/lib"], :loaded_from=>"/Users/mark/dev/sites/pingtags/vendor/bundle/specifications/oauth-0.3.6.gemspec", :name=>"oauth"},
+        {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/rails-2.3.8/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/rails-2.3.8.gemspec", :name=>"rails"},
         {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/rspec-1.3.0/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/rspec-1.3.0.gemspec", :name=>"rspec"},
         {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/rspec-rails-1.3.2/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/rspec-rails-1.3.2.gemspec", :name=>"rspec-rails"},
-        {:load_paths=>["/Users/mark/.bundle/ruby/1.8/gems/will_paginate-2.3.12/lib"], :loaded_from=>"/Users/mark/.bundle/ruby/1.8/specifications/will_paginate-2.3.12.gemspec", :name=>"will_paginate"},
+        {:load_paths=>["/Users/mark/.rvm/gems/ruby-1.8.7-p248/gems/will_paginate-2.3.12/lib"], :loaded_from=>"/Users/mark/.rvm/gems/ruby-1.8.7-p248/specifications/will_paginate-2.3.12.gemspec", :name=>"will_paginate"},
       ].map do |hash|
     if hash[:virtual_spec]
       spec = eval(hash[:virtual_spec], TOPLEVEL_BINDING, "<virtual spec for '#{hash[:name]}'>")
