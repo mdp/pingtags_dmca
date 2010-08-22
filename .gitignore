@@ -1,3 +1,6 @@
-vendor/gems
 log/*
 tmp
+vendor/bundle/bin
+vendor/bundle/doc
+vendor/bundle/gems
+vendor/bundle/specifications
