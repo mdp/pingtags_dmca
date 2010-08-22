@@ -1,5 +1,6 @@
 en:
   home:
+    title: Your new business card
     biz_card_is_useful: Your business card is useful again
     slogan: A scannable, clickable, trackable way to connect your business card with LinkedIn&trade;
     explanation: |
@@ -55,3 +56,14 @@ en:
     qr_explanation: |
       This code can be printed and placed on the back of your business card. Simply right click and save the image.
       Your printer can place it on the back of your business card.
+    about: About
+    connect_via_linkedin: Connect via LinkedIn
+    contact_info: Contact Info
+    links: Links
+    beta: Beta
+    created_by: Created by SquarePush
+    create_your_own: Create your own PingTag
+    back: Back
+    get_your_pingtag: Get your own PingTag by signing in with LinkedIn
+    signup: Signup using LinkedIn
+    ping: Ping with LinkedIn

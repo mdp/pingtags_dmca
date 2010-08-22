@@ -13,13 +13,17 @@ role :web, "dev.squarepush.com"                          # Your HTTP server, Apa
 role :app, "dev.squarepush.com"                          # This may be the same as your `Web` server
 role :db,  "dev.squarepush.com", :primary => true # This is where Rails migrations will run
 
-namespace :bundler do
-  task :install, :roles => :app, :except => { :no_release => true }  do
-    run("bundle install")
+namespace :gems do
+  task :bundle, :roles => :app do
+    run "ln -nfs #{shared_path}/bundler_gems/gems #{release_path}/vendor/bundle/gems"
+    run "ln -nfs #{shared_path}/bundler_gems/docs #{release_path}/vendor/bundle/docs"
+    run "ln -nfs #{shared_path}/bundler_gems/specifications #{release_path}/vendor/bundle/specifications"
+    run "ln -nfs #{shared_path}/bundler_gems/bin #{release_path}/vendor/bundle/bin"
+    run "cd #{release_path} && bundle install"
   end
 end
- 
-# after 'deploy:update_code', 'bundler:bundle_new_release'
+
+after 'deploy:update_code', 'gems:bundle'
 
 namespace :deploy do
   task :start do; end;

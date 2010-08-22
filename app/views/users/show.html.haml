@@ -2,7 +2,7 @@
   .toolbar
     %h1 PingTags
     %a{ :href => '#about', :class=>"button slideup", :id=>"infoButton" }
-      About
+      = t('profile.about')
   %div{:style => 'text-align:center'}
     -if flash[:message]
       #flash_message= flash[:message]
@@ -12,11 +12,11 @@
       #avatar
         %img{:src=> @user.picture_url }
     %p.summary= @user.summary
-  %ul.rounded 
+  %ul.rounded
     %li.centered
       %a{:href => "#connect"}
-        Connect via LinkedIn
-  %h4 Contact Info
+        = t('profile.connect_via_linkedin')
+  %h4= t('profile.contact_info')
   %ul.rounded
     -if @user.email
       %li.arrow
@@ -26,51 +26,51 @@
       %li.arrow
         %a{:href => "tel:#{@user.phone_number}", :rel => "external"}
           = @user.phone_number
-  %h4 Links
+  %h4= t('profile.links')
   %ul.rounded
     - @user.links.each do |link|
       %li.forward
         =tracked_link_to link[:name], link[:url], @scan.id, :target => '_blank'
-        
+
 #about
   .toolbar
     %h1 Pingtags
     %a{:href => '#', :class => 'back'}
-      Back
+      = t('profile.back')
   .centered
     %p
       %br
-      Beta
+      = t('profile.beta')
       %br
       %a{ :href => "http://squarepush.com" }
-        Created by SquarePush
-  %ul.rounded 
+        = t('profile.created_by')
+  %ul.rounded
     %li.arrow.centered
       %a{:href => "#signup"}
-        Create your own PingTag
+        =t('profile.create_your_own')
 #signup
   .toolbar
     %h1 Pingtags
     %a{:href => '#', :class => 'back'}
-      Back
+      =t('profile.back')
   .centered
-    %p Get your own PingTag by signing in with LinkedIn
+    %p=t('profile.get_your_pingtag')
   -form_for(UserSession.new, :html => {:id => 'signupForm'}) do |f|
     =hidden_field_tag :source, 'signup'
     %ul.edit.rounded
       %li
         = text_field_tag :email, '', :placeholder => 'Email'
       %li.forward
-        %a{:href => "#", :class => 'submitBtn'} Signup using LinkedIn
+        %a{:href => "#", :class => 'submitBtn'}= t('profile.signup')
 
-      
+
 #connect
   .toolbar
     %h1 Pingtags
     %a{:href => '#', :class => 'back'}
-      Back
+      = t('profile.back')
   .centered
-    %h1 Connect via LinkedIn
+    %h1= t('profile.connect_via_linkedin')
   -form_for(UserSession.new, :html => {:id => 'pingForm'}) do |f|
     =hidden_field_tag :user_crypt_id, @user.crypted_id
     =hidden_field_tag :source, 'ping'
@@ -78,9 +78,9 @@
       %li
         = text_field_tag :email, '', :placeholder => 'Email'
       %li.forward
-        %a{:href => "#", :class => 'submitBtn'} Ping with LinkedIn
-        
-        
+        %a{:href => "#", :class => 'submitBtn'}= t('profile.ping')
+
+
 :javascript
   $('form#pingForm .submitBtn').click(function(){
     $('form#pingForm').submit();

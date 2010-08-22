@@ -4,11 +4,11 @@
     %meta{ :content => "text/html;charset=UTF-8", "http-equiv" => "content-type" }
     %title
       PingTags:
-      = title || controller.class.to_s.gsub('Controller','')
+      = yield(:title)
     = stylesheet_link_tag 'reset', 'text', '960', 'squarepush', 'master'
     = javascript_include_tag 'jquery', :cache => true
     = javascript_include_tag 'uservoice', :cache => true
-    
+
     =yield :scripts
   %body
     .container_12
@@ -19,7 +19,7 @@
           #nav
             -if current_user
               %ul
-                %li.first 
+                %li.first
                   %a{:href => account_path}
                     = t('main.dashboard')
                 %li.last

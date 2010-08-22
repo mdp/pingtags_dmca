@@ -1,7 +1,9 @@
+-content_for :title do
+  =t('home.title')
 </div>
 #home.intro
   .container_12.center
-    %div.grid_5.suffix_1
+    %div.grid_6.suffix_1
       %h2.close= t('home.biz_card_is_useful')
       %h5.bright= t('home.slogan')
       %p= t('home.explanation')
@@ -11,24 +13,24 @@
         .note.dark
           PingTags will still work for existing users, but signup has been halted. See more
           %a{:href => ''} here
-    #iphone.grid_6
-      =image_tag 'iphone_screen.png'
+    #iphone.grid_5
+      =localized_image_tag 'iphone_screen.png'
     .clear
 
 .container_12
 
   #scan.grid_4
-    %img.frame{:src => 'images/scan.jpg'}
+    = localized_image_tag('scan.jpg', :class => 'frame')
     %h2= t('home.scan')
     %p= t('home.scan_details')
 
   #click.grid_4
-    %img.frame{:src => 'images/click.jpg'}
+    = localized_image_tag('click.jpg', :class => 'frame')
     %h2= t('home.click')
     %p= t('home.click_details')
 
   #analyze.grid_4.omega
-    %img.frame{:src => 'images/analyze.jpg'}
+    = localized_image_tag('analyze.jpg', :class => 'frame')
     %h2= t('home.analyze')
     %p= t('home.analyze_details')
 

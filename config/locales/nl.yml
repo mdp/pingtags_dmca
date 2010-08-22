@@ -1,20 +1,21 @@
 nl:
   home:
+    title: PingTags
     biz_card_is_useful: Haal meer uit uw visitekaartje
-    slogan: Een nieuwe, meetbare manier om je visitekaartje te koppelen LinkedIn&trade; netwerk.
+    slogan: Een nieuwe, meetbare manier om uw visitekaartje te koppelen aan uw LinkedIn&trade; netwerk. 
     explanation: |
-       Met Pingtags maak je een link tussen je visitekaartje en je LinkedIn&trade; profile met een <em>simpele QR code.</em>
-       Meld je aan met je LinkedIn&trade; account en
-       <em>binnen 30 seconden is je PingTag gereed</em>
+        Met Pingtags maak je een link tussen het visitekaartje en het LinkedIn&trade; profiel met een <em>simpele QR code.</em>
+        Meldt u aan met uw LinkedIn&trade; account en
+        <em>binnen 30 seconden is uw PingTag gereed</em>
     scan: Scan
     scan_details: |
-      Na het scannen van uw persoonlijke QR code schakelt de telefoon van uw relatie direct door naar uw persoonlijke webpagina. Op deze pagina staat al uw LinkedIn&trade; informatie en contactgegevens.
+      Zodra uw relatie uw persoonlijke QR code scant, schakelt zijn telefoon direct door naar uw persoonlijke pagina. Op deze pagina staat al uw LinkedIn&trade; informatie en contactgegevens. 
     click: Connect
     click_details: |
-      Iedereen die uw code scant heeft de mogelijkheid om u direct te mailen of te bellen, zonder gegevens in te toetsen. En met één druk op de knop bent u connected via LinkedIn&trade;! Nu is het nog makkelijker om bereikbaar te zijn.
+      Iedereen die uw code scant heeft de mogelijkheid om u direct te mailen of te bellen, zonder gegevens in te toetsen. En met één druk op de knop bent u connected via LinkedIn&trade;! Nu is het nog makkelijker om bereikbaar te zijn. 
     analyze: Analyseer
     analyze_details: |
-      Als u inlogt op uw persoonlijke PintTags account kunt u zien hoeveel mensen uw visitekaartje gescand hebben en welke links ze gebruikt hebben. Ook ziet op u op de wereldkaart precies waar men was toen ze uw kaartje scanden.
+      Als u inlogt op uw persoonlijke PingTags account kunt u zien hoeveel mensen uw visitekaartje gescand hebben en welke links ze gebruikt hebben. Ook ziet op u op de wereldkaart precies waar men was toen ze uw kaartje scanden.
     recent_scans: Recente scans
 
   main:
@@ -25,18 +26,18 @@ nl:
 
   login:
     signin_with_linkedin: "Log in bij je PingTag account met LinkedIn:"
-    signin_button: Klik hier om in te loggen met with LinkedIn
+    signin_button: Klik hier om in te loggen met LinkedIn&trade;
     cancel: Annuleren
     beta_notice: Pingtags is momenteel nog in Beta.
     signup_with_linkedin: U kunt zich aanmelden voor een gratis account met uw LinkedIn gegevens.
-    signup_button: Aanmelden via LinkedIn
+    signup_button: Aanmelden via LinkedIn&trade;
     email: E-mail
 
   profile:
     linkedin_profile: LinkedIn&trade; Profiel
     pingtag_qr: PingTag QR Code
     summary: Samenvatting
-    contact: Contact gegevens
+    contact: Contactgegevens
     email: "E-mail:"
     phone: "Telefoon:"
     edit: wijzigen
@@ -50,4 +51,18 @@ nl:
     next: Volgende
     qr_explanation: |
       Deze code kunt u afdrukken op uw visitekaartje. Gebruik uw rechter-muisknop om de afbeelding op te slaan op uw computer.
+
+    about: Over
+    connect_via_linkedin: Connect via LinkedIn
+    contact_info: Contactgegevens
+    links: Links
+    beta: Beta
+    created_by: Created by SquarePush
+    create_your_own: Maak uw eigen PingTag
+    back: Terug
+    get_your_pingtag: Maak uw eigen PingTag aan door in te loggen bij LinkedIn&trade;
+    signup: Aanmelden met LinkedIn
+    ping: “Join network” met LinkedIn&trade;
+
+    title: Uw nieuwe visitekaartje
 
