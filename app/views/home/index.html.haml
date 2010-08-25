@@ -9,10 +9,8 @@
       %p= t('home.explanation')
       %h3.close
         %a.big_button{:href => signup_path}
-          Beta Signup Closed
+          =t('login.signup_button')
         .note.dark
-          PingTags will still work for existing users, but signup has been halted. See more
-          %a{:href => ''} here
     #iphone.grid_5
       =localized_image_tag 'iphone_screen.png'
     .clear
@@ -41,7 +39,9 @@
 .container_12
   #footer.grid_12
     &copy;
-    %a{:href => 'http://squarepush.com'} 2010 Squarepush LLC and powered by LinkedIn&trade;
+    %a{:href => 'http://squarepush.com'}
+      =Time.now.year
+      Squarepush LLC, Macavity Projecten, and powered by LinkedIn&trade;
 
 -content_for :scripts do
   %script{:src => '/javascripts/jqgooglemaps.js'}
