@@ -1,6 +1,6 @@
 set :application, "pingtags"
 set :repository,  "git@github.com:mdp/pingtag.git"
-set :deploy_to, "/vol/apps/#{application}.com"
+set :deploy_to, "/var/www/#{application}.com"
 set :user, 'deploy'
 set :use_sudo, false
 set :stage, :production
