@@ -1,6 +1,6 @@
 set :application, "pingtags"
 set :repository,  "git@github.com:mdp/pingtag.git"
-set :deploy_to, "/vol/apps/#{application}"
+set :deploy_to, "/vol/apps/#{application}.com"
 set :user, 'deploy'
 set :use_sudo, false
 set :stage, :production
@@ -9,9 +9,9 @@ set :ssh_options, {:forward_agent => true }
 set :scm, :git
 set :deploy_via, :remote_cache
 
-role :web, "dev.squarepush.com"                          # Your HTTP server, Apache/etc
-role :app, "dev.squarepush.com"                          # This may be the same as your `Web` server
-role :db,  "dev.squarepush.com", :primary => true # This is where Rails migrations will run
+role :web, "polk.sqpush.com"                          # Your HTTP server, Apache/etc
+role :app, "polk.sqpush.com"                          # This may be the same as your `Web` server
+role :db,  "polk.sqpush.com", :primary => true # This is where Rails migrations will run
 
 namespace :gems do
   task :bundle, :roles => :app do

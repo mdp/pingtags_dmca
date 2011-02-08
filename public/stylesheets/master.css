@@ -1,24 +1,24 @@
 body {
-  background: #FFF;
-  color: #222; }
+  background: white;
+  color: #222222; }
 
 .heading {
-  border-top: 4px solid #00A2D7; }
+  border-top: 4px solid #00a2d7; }
 
 #stats {
   padding: 10px;
-  border: 1px solid #D8D8D8; }
+  border: 1px solid #d8d8d8; }
   #stats .gravatar {
     float: left; }
     #stats .gravatar img {
-      border: 2px solid #00A2D7; }
+      border: 2px solid #00a2d7; }
   #stats .client {
     font-size: 2em;
     padding-left: 95px; }
     #stats .client span {
       display: block;
       font-size: 70%;
-      color: #555; }
+      color: #555555; }
   #stats .stat_number {
     padding-left: 5px;
     padding-top: 5px;
@@ -29,7 +29,7 @@ body {
     #stats .stat_number span {
       font-size: 35%;
       font-weight: bold;
-      color: #555; }
+      color: #555555; }
   #stats hr {
     margin-top: 5px;
     margin-bottom: 0%;

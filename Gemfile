@@ -14,6 +14,8 @@ gem "oauth"
 group :development do
   # bundler requires these gems in development
   gem "mongrel"
+  gem "fastercsv"
+  gem "geoip"
 end
  
 group :test do
