@@ -1,7 +1,4 @@
 log/*
 tmp
-vendor/bundle/ruby
-vendor/bundle/bin
-vendor/bundle/gems
-vendor/bundle/specifications
 db_backups
+.bundle

@@ -1,3 +1,4 @@
+require "bundler/capistrano"
 set :application, "pingtags"
 set :repository,  "git@github.com:mdp/pingtag.git"
 set :deploy_to, "/var/www/#{application}.com"
@@ -13,17 +14,6 @@ role :web, "polk.sqpush.com"                          # Your HTTP server, Apache
 role :app, "polk.sqpush.com"                          # This may be the same as your `Web` server
 role :db,  "polk.sqpush.com", :primary => true # This is where Rails migrations will run
 
-namespace :gems do
-  task :bundle, :roles => :app do
-    run "ln -nfs #{shared_path}/bundler_gems/gems #{release_path}/vendor/bundle/gems"
-    run "ln -nfs #{shared_path}/bundler_gems/docs #{release_path}/vendor/bundle/docs"
-    run "ln -nfs #{shared_path}/bundler_gems/specifications #{release_path}/vendor/bundle/specifications"
-    run "ln -nfs #{shared_path}/bundler_gems/bin #{release_path}/vendor/bundle/bin"
-    run "cd #{release_path} && bundle install"
-  end
-end
-
-after 'deploy:update_code', 'gems:bundle'
 
 namespace :deploy do
   task :start do; end;
