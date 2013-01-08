@@ -1,21 +1,20 @@
 # include at least one source and the rails gem
 source :gemcutter
-gem "rails", "~> 2.3.8", :require => nil
-gem "authlogic"
+gem "rails", "~> 3.2.0", :require => nil
+gem "authlogic", "~> 3.1.0"
 gem "haml"
 gem "liquid"
-gem "mysql"
-gem 'hoptoad_notifier'
 gem 'four_bites_aes'
 gem "will_paginate"
 gem "nokogiri"
 gem "oauth"
+gem "geoip"
  
 group :development do
-  # bundler requires these gems in development
-  gem "mongrel"
   gem "fastercsv"
-  gem "geoip"
+end
+
+group :production do
 end
  
 group :test do
